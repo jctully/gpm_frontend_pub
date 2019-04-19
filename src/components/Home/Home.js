@@ -10,6 +10,7 @@ export default class Home extends Component {
                 <h1> Welcome to the Graduate Program Manager Application!</h1>
                 <a href="/info"><button>Info</button></a>
                 <a href="/login"><button>Login</button></a>
+                <a href="/todo"><button>Todos</button></a>
             </div>
         )
     }
