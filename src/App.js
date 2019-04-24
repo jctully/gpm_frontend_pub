@@ -1,36 +1,62 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
-import Info from "./components/Info/Info"
+import Info from "./components/Info/Info";
+import Portal from "./components/Portal/Portal";
 
-import logo from "./logo.svg";
+export const NAME = "Student Name";
 
 class App extends Component {
-
   render() {
     return (
       <Router>
         <div>
-          <Route exact={true} path="/" render={() => (
-            <div className="App">
-              <Home />
-            </div>
-          )}/>
+          <Route
+            exact={true}
+            path="/"
+            render={() => (
+              <div className="App">
+                <Home />
+              </div>
+            )}
+          />
         </div>
-        <Route exact={true} path="/login" render={() => (
+        <Route
+          exact={true}
+          path="/login"
+          render={() => (
             <div className="App">
               <Login />
             </div>
-          )}/>
-        <Route exact={true} path="/info" render={() => (
+          )}
+        />
+        <Route
+          exact={true}
+          path="/info"
+          render={() => (
             <div className="App">
               <Info />
             </div>
-          )}/>
+          )}
+        />
+        <Route
+          exat={true}
+          path="/portal"
+          render={() => (
+            <div className="App">
+              <Portal />
+            </div>
+          )}
+        />
       </Router>
     );
   }
