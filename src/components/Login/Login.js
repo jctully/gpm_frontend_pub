@@ -12,12 +12,17 @@ export default class Login extends Component {
       
       render() {
         return (
+          <div>
+          <div className='background'></div>
+                <div className='panel-left'></div>
+                <div className='panel-right'></div>
           <form onSubmit={this.handleSignIn.bind(this)}>
-            <h3>Sign in</h3>
-            <input type="text" ref="username" placeholder="enter you username" />
-            <input type="password" ref="password" placeholder="enter password" />
-            <input type="submit" value="Login" />
+            <h3 class = 'page-title'>Sign in</h3>
+            <input id='username' type="text" ref="username" placeholder="enter you username" />
+            <input id='password' type="password" ref="password" placeholder="enter password" />
+            <input id='login-btn' type="submit" value="Login" />
           </form>
+          </div>
         )
       }
 }

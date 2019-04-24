@@ -7,13 +7,19 @@ export default class Home extends Component {
 
     render () {
         return (
+            
             <div id="container">
-                <h1> Welcome to the Graduate Program Manager Application!</h1>
+            <div className='background'></div>
+            <div className='panel-left'></div>
+            <div className='panel-right'></div>
+
+            
+                <h1 className='page-title'> Welcome to the Graduate Program Manager Application!</h1>
                 <a href="/info">
-                    <button class="button">Info</button>
+                    <button className="button">Info</button>
                 </a>
                 <a href="/login">
-                    <button class="button">Login</button>
+                    <button className="button">Login</button>
                 </a>
             </div>
         )

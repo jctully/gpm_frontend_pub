@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  height:100%;
+  overflow-y: auto;
+  perspective: 2px;
+  
 }
 
 .App-logo {
@@ -23,6 +27,99 @@
   color: #61dafb;
 }
 
+.MainContainer {  
+  text-align: center;
+  background-color:#003f87;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.banner{
+  vertical-align: center;
+  background: url("/images/splash.jpg");
+  height: 30%;
+  max-height: 300px;
+  width: 70%;
+  min-width: 1000px;
+
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll; 
+
+  filter: drop-shadow(0 1rem 0.75rem black);
+
+}
+
+.ContentContainer {
+  position: relative;
+  top:-7px;
+  bottom:0;
+  left:0;
+  right:0;
+  min-height: calc(100% - 300px);
+  background-color: white;
+  margin: auto;
+  padding: 10px;
+  width:70%;
+  min-width: 1000px;
+
+  filter: drop-shadow(0 1rem 0.75rem black);
+}
+
+/* .ParallaxContainer {
+  background-image: url("/images/splash.jpg");
+  background-size: 200% auto;
+  width:70%;
+  top:-500px;
+  right: 7px;
+  vertical-align: top;
+  height: 300px;
+  position: relative;
+  z-index: -1;
+  transform: translateZ(-1px) scale(2);
+  background-position: center;
+  margin:0 auto;
+  background-repeat: no-repeat;
+} */
+
+.page-title {
+  margin-top: 1%;
+  font-size: 3em;
+}
+
+.wrap {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* login page */
+#username {
+  display: block;
+  margin: auto;
+}
+
+#password {
+  display: block;
+  margin: auto;
+}
+
+#login-btn {
+  margin-top: 5px;
+}
+
+/* info page */
+#info-login {
+  right:0;
+  top:12%;
+  position: absolute;
+  z-index: 999;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,6 +133,10 @@
   font-size: calc(10px + 2vmin);
 }
 
+.center {
+  display: inline-block;
+}
+
 /* not using */
 .login-button {
   border-color: blue;
@@ -45,6 +146,7 @@
   margin-right: 10px;
 }
 
+/* not using */
 .info-button {
   border-color: blue;
   border: solid;
@@ -61,6 +163,8 @@
   display: inline-block;
   box-sizing: border-box;
   margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   padding: 12px 24px;
   cursor: pointer;
   transition: 600ms ease background-color;
@@ -85,7 +189,7 @@
 
 }
 
-/* alternate button style, random colors from internet */
+/* alternate button style, ugly colors from internet but has gradient */
 .btn-gradient {
   text-decoration:none;
   background: #007ac8;
