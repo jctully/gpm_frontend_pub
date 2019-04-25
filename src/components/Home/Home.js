@@ -19,6 +19,9 @@ export default class Home extends Component {
                     <a href="/portal">
                         <button id='bypass' className="button">BYPASS</button>
                     </a>
+                    <a href="/todo">
+                        <button className="button">Todos</button>
+                    </a>
                 </div>
             </div>
         )
