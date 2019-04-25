@@ -48,26 +48,11 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: scroll; 
 
   filter: drop-shadow(0 1rem 0.75rem black);
 
-}
-
-.ContentContainer {
   position: relative;
-  top:-7px;
-  bottom:0;
-  left:0;
-  right:0;
-  min-height: calc(100% - 300px);
-  background-color: white;
-  margin: auto;
-  padding: 10px;
-  width:70%;
-  min-width: 1000px;
-
-  filter: drop-shadow(0 1rem 0.75rem black);
+  z-index: -1;
 }
 
 /* .ParallaxContainer {
@@ -86,6 +71,22 @@
   background-repeat: no-repeat;
 } */
 
+.ContentContainer {
+  position: relative;
+  top:-7px;
+  bottom:0;
+  left:0;
+  right:0;
+  min-height: calc(100% - 300px);
+  background-color: white;
+  margin: auto;
+  padding: 10px;
+  width:70%;
+  min-width: 1000px;
+
+  filter: drop-shadow(0 1rem 0.75rem black);
+}
+
 .page-title {
   margin-top: 1%;
   font-size: 3em;
@@ -94,6 +95,14 @@
 .wrap {
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+#bypass {
+  color: blue;
+  background-color: red;
+  position: fixed;
+  top:-15%;
+  right:0;
 }
 
 /* login page */
