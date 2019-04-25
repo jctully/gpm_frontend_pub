@@ -1,20 +1,25 @@
 import React, { Component } from "react";
-import '../../App.css';
+import { Container } from "semantic-ui-react";
+
+import TopBar from "./TopBar";
+import Menu from "../Menu/Menu"
+
+const App = ({ children }) => (
+  <Container style={{ margin: 20 }}>
+
+
+    {children}
+  </Container>
+);
 
 export default class Portal extends Component {
-    state = {
-    }
-
-    render () {
-        return (
-            
-            <div className='MainContainer'>
-            <div className='banner'></div>
-                <div className='ContentContainer'>
-                    <h1 className='page-title'> Portal</h1>
-                    
-                </div>
-            </div>
-        )
-    }
+  render(  ) {
+    return (
+      <div>
+        <TopBar />
+        <Menu />
+        <h3>Portal</h3>
+      </div>
+    );
+  }
 }
