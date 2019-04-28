@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import '../../App.css';
 
 export default class Home extends Component {
-    state = {
-    }
+
 
     render () {
         return (
