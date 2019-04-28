@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import '../../App.css';
 
 export default class Home extends Component {
-
+    state = {
+    }
 
     render () {
-        return (            
+        return (
+            
             <div className='MainContainer'>
             <div className='banner'></div>
                 <div className='ContentContainer'>
@@ -18,9 +20,6 @@ export default class Home extends Component {
                     </a>
                     <a href="/portal">
                         <button id='bypass' className="button">BYPASS</button>
-                    </a>
-                    <a href="/todo">
-                        <button className="button">Todos</button>
                     </a>
                 </div>
             </div>

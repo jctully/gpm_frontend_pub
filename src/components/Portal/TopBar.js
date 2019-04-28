@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-
 import mainLogo from "../../Assets/westernlogo_white_sm.png";
-import { NAME } from "../../App";
+import  Student from  "../../Assets/Student.json";
 
 export default class TopBar extends Component {
   render() {
@@ -9,7 +8,7 @@ export default class TopBar extends Component {
       <header className="TopBar">
         <img src={mainLogo} alt="Western Logo" />
         <h4>Grad Program Manager!</h4>
-        <span class="name">{NAME}</span>
+        <span class="name">{ "Hello, " + Student[0].first_name + " " + Student[0].last_name }</span>
       </header>
     );
   }

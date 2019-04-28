@@ -13,10 +13,6 @@ code {
     monospace;
 }
 
-.completed {
-  text-decoration: line-through;
-}
-
 .TopBar {
   color: white;
   display: flex;
