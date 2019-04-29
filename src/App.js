@@ -14,6 +14,7 @@ import Info from "./components/Info/Info";
 import Portal from "./components/Portal/Portal";
 import Forms from "./components/Portal/Forms";
 import Student from "./components/Portal/Student";
+import Todo from "./components/Todo/todo.component"
 
 class App extends Component {
   render() {
@@ -44,6 +45,14 @@ class App extends Component {
           render={() => (
             <div className="App">
               <Info />
+            </div>
+          )}/>
+        <Route
+          exact={true}
+          path="/todo"
+          render={() => (
+            <div className="App">
+              <Todo />
             </div>
           )}/>
         <Route
