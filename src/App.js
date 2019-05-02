@@ -11,10 +11,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
 import Info from "./components/Info/Info";
-import Todo from "./components/Todo/todo.component"
 import Portal from "./components/Portal/Portal";
-
-export const NAME = "Student Name";
+import Forms from "./components/Portal/Forms";
+import Student from "./components/Portal/Student";
+import Todo from "./components/Todo/todo.component"
 
 class App extends Component {
   render() {
@@ -30,7 +30,6 @@ class App extends Component {
               </div>
             )}
           />
-        </div>
         <Route
           exact={true}
           path="/login"
@@ -48,7 +47,10 @@ class App extends Component {
               <Info />
             </div>
           )}/>
-        <Route exact={true} path="/todo" render={() => (
+        <Route
+          exact={true}
+          path="/todo"
+          render={() => (
             <div className="App">
               <Todo />
             </div>
@@ -62,6 +64,25 @@ class App extends Component {
             </div>
           )}
         />
+         <Route
+          exat={true}
+          path="/forms"
+          render={() => (
+            <div className="App">
+              <Forms />
+            </div>
+          )}
+        />
+         <Route
+          exat={true}
+          path="/student"
+          render={() => (
+            <div className="App">
+              <Student />
+            </div>
+          )}
+        />
+       </div>
       </Router>
     );
   }

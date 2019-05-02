@@ -40,7 +40,7 @@ export default class Todo extends Component {
                     </div>
                 </nav>
                 <br/>
-                
+
                 <Route path="/todo/" exact component={TodosList} />
                 <Route path="/todo/edit/:id" component={EditTodo} />
                 <Route path="/todo/create" component={CreateTodo} />

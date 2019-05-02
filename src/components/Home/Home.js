@@ -5,7 +5,8 @@ export default class Home extends Component {
 
 
     render () {
-        return (            
+        return (
+
             <div className='MainContainer'>
             <div className='banner'></div>
                 <div className='ContentContainer'>
@@ -16,11 +17,11 @@ export default class Home extends Component {
                     <a href="/login">
                         <button className="button">Login</button>
                     </a>
+                    <a href="/todo">
+                      <button className="button">Todos</button>
+                    </a>
                     <a href="/portal">
                         <button id='bypass' className="button">BYPASS</button>
-                    </a>
-                    <a href="/todo">
-                        <button className="button">Todos</button>
                     </a>
                 </div>
             </div>
