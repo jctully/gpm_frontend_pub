@@ -14,7 +14,10 @@ import Info from "./components/Info/Info";
 import Portal from "./components/Portal/Portal";
 import Forms from "./components/Portal/Forms";
 import Student from "./components/Portal/Student";
-import Todo from "./components/Todo/todo.component"
+import Todo from "./components/Todo/todo.component";
+import Admin from "./components/Portal/Admin";
+import CreateStudent from "./components/Admin/create.student.component";
+import CreateTask from "./components/Admin/create.student.task.component";
 
 class App extends Component {
   render() {
@@ -82,6 +85,33 @@ class App extends Component {
             </div>
           )}
         />
+        <Route
+          exat={true}
+          path="/admin"
+          render={() => (
+            <div className="App">
+              <Admin />
+            </div>
+          )}
+        />
+        <Route
+            exact={true}
+            path="/admin/create/student"
+            render={() => (
+              <div className="App">
+                <CreateStudent />
+              </div>
+            )}
+          />
+        <Route
+            exact={true}
+            path="/admin/create/task"
+            render={() => (
+              <div className="App">
+                <CreateTask />
+              </div>
+            )}
+          />
        </div>
       </Router>
     );

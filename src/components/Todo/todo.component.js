@@ -15,13 +15,6 @@ export default class Todo extends Component {
     render() {
         return (
             <Router>
-                <Route exact={true} path="/" render={() => (
-                    <div className="App">
-                    <App />
-                    </div>
-                )}/>
-
-
                 <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <a className="navbar-brand" href="https://google.com" target="_blank">
