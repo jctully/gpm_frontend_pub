@@ -1,3 +1,4 @@
+/*
 import React, {Component} from 'react';
 
 export default class ListStudents extends Component {
@@ -11,5 +12,65 @@ export default class ListStudents extends Component {
                 <p>Student 4</p>
             </div>
         );
+    }
+}
+*/
+
+import React, { Component } from 'react';
+import { Link, Route } from 'react-router-dom';
+import axios from 'axios';
+
+/*
+import EditTodo from "./edit-todo.component";
+*/
+
+const Student = props => (
+    <tr>
+        <td className='student'>{props.student.name}</td>
+        <td>
+            <Link to={"/edit/student/"+props.student._id}>Edit</Link>
+        </td>
+    </tr>
+)
+
+export default class StudentList extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {students: []};
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:4000/students/')
+            .then(response => {
+                this.setState({ students: response.data });
+            })
+            .catch(function (error){
+                console.log(error);
+            })
+    }
+
+    studentList() {
+        return this.state.students.map(function(currentStudent, i){
+            return <Student student={currentStudent} key={i} />;
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                <h3>Student List</h3>
+                <table className="table table-striped" style={{ marginTop: 20 }} >
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        { this.studentList() }
+                    </tbody>
+                </table>
+            </div>
+        )
     }
 }

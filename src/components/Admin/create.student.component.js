@@ -8,12 +8,14 @@ export default class CreateStudent extends Component {
         super(props);
 
         this.onChangeStudentName = this.onChangeStudentName.bind(this);
+        this.onChangeStudentUsername = this.onChangeStudentUsername.bind(this);
         this.onChangeWesternId = this.onChangeWesternId.bind(this);
         this.onChangeAdmissionQtr = this.onChangeAdmissionQtr.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             student_name: '',
+            student_username: '',
             western_id: '',
             admission_qtr: ''
         }
@@ -22,6 +24,12 @@ export default class CreateStudent extends Component {
     onChangeStudentName(e) {
         this.setState({
             student_name: e.target.value
+        });
+    }
+
+    onChangeStudentUsername(e) {
+        this.setState({
+            student_username: e.target.value
         });
     }
 
@@ -42,11 +50,13 @@ export default class CreateStudent extends Component {
 
         console.log(`Form submitted:`);
         console.log(`Student Name: ${this.state.student_name}`);
+        console.log(`Student Username: ${this.state.student_username}`);
         console.log(`Western Id: ${this.state.western_id}`);
         console.log(`Admission Qtr: ${this.state.admission_qtr}`);
 
         const newStudent = {
             student_name: this.state.student_name,
+            student_username: this.state.student_username,
             western_id: this.state.western_id,
             admission_qtr: this.state.admission_qtr
         };
@@ -57,6 +67,7 @@ export default class CreateStudent extends Component {
 
         this.setState({
             student_name: '',
+            student_username: '',
             western_id: '',
             admission_qtr: ''
         })
@@ -73,6 +84,14 @@ export default class CreateStudent extends Component {
                                 className="form-control"
                                 value={this.state.name}
                                 onChange={this.onChangeStudentName}
+                                />
+                    </div>
+                    <div className="form-group">
+                        <label>Username: </label>
+                        <input  type="text"
+                                className="form-control"
+                                value={this.state.username}
+                                onChange={this.onChangeStudentUsername}
                                 />
                     </div>
                     <div className="form-group">

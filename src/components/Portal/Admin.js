@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import TopBar from "./TopBar";
 import Menu from "./Menu"
 import CreateStudent from "../Admin/create.student.component";
-import ListStudents from "../Admin/list.students.component";
+import StudentsList from "../Admin/list.students.component";
 import CreateTask from "../Admin/create.student.task.component";
 
 export default class Admin extends Component {
@@ -21,7 +21,7 @@ export default class Admin extends Component {
           <a href="/admin/create/task">
             <button className="button">Create Task</button>
           </a>
-          <ListStudents />
+          <StudentsList />
         </div>
 
         {/*
