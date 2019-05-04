@@ -6,6 +6,8 @@ import Menu from "./Menu"
 import CreateStudent from "../Admin/create.student.component";
 import StudentsList from "../Admin/list.students.component";
 import CreateTask from "../Admin/create.student.task.component";
+import Student from "./Student";
+import StudentTasks from "../Student/student.tasks.component";
 
 export default class Admin extends Component {
   render(  ) {
@@ -40,6 +42,9 @@ export default class Admin extends Component {
           <Route path="/admin/" exact component={StudentsList} />
           <Route path="/admin/create/student" component={CreateStudent} />
           <Route path="/admin/create/task" component={CreateTask} />
+
+          <Route path="/admin/student/:id/tasks" component={StudentTasks} />
+
           {/*<Route path="/admin/student/tasks" component={CreateTask} />*/}
           {/*<Route path="/admin/edit/:id" component={EditTodo} />*/}
 

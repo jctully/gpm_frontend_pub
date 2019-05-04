@@ -17,8 +17,25 @@ export default class CreateTask extends Component {
             task_name: '',
             task_description: '',
             task_link: '',
-            task_student: ''
+            task_student_id: '',
+            students: []
         }
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:4000/students/')
+            .then(response => {
+                this.setState({ students: response.data });
+            })
+            .catch(function (error){
+                console.log(error);
+            })
+    }
+
+    studentList() {
+        return this.state.students.map(function(currentStudent, i){
+            return <option value={currentStudent._id}>{currentStudent.student_name}</option>;
+        })
     }
 
     onChangeTaskName(e) {
@@ -41,7 +58,7 @@ export default class CreateTask extends Component {
 
     onChangeTaskStudent(e) {
         this.setState({
-            task_student: e.target.value
+            task_student_id: e.target.value
         });
     }
 
@@ -52,13 +69,14 @@ export default class CreateTask extends Component {
         console.log(`Task Name: ${this.state.task_name}`);
         console.log(`Task Description: ${this.state.task_description}`);
         console.log(`Task Link: ${this.state.task_link}`);
-        console.log(`Task Student: ${this.state.task_student}`);
+        console.log(`Task Student: ${this.state.task_student_id}`);
 
         const newTask = {
             task_name: this.state.task_name,
             task_description: this.state.task_description,
             task_link: this.state.task_link,
-            task_student: this.state.task_student
+            task_student_id: this.state.task_student_id,
+            task_completed: false
         };
 
         axios.post('http://localhost:4000/tasks/add', newTask)
@@ -69,7 +87,7 @@ export default class CreateTask extends Component {
             task_name: '',
             task_description: '',
             task_link: '',
-            task_student: ''
+            task_student_id: ''
         })
     }
 
@@ -112,11 +130,8 @@ export default class CreateTask extends Component {
                                 value={this.state.task_student}
                                 onChange={this.onChangeTaskStudent}
                         />*/}
-                        <select value={this.state.task_student} onChange={this.onChangeTaskStudent}>
-                            <option value="student1">Student 1</option>
-                            <option value="student2">Student 2</option>
-                            <option value="student3">Student 3</option>
-                            <option value="student4">Student 4</option>
+                        <select value={this.state.task_student_id} onChange={this.onChangeTaskStudent}>
+                            { this.studentList() }
                         </select>
                     </div>
 

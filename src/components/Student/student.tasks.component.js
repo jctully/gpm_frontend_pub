@@ -4,8 +4,15 @@ import axios from 'axios';
 
 const Task = props => (
     <tr>
-        <td className='task'>
+        {/* Maybe if completed put green check box here somehow */}
+        <td className={props.task.task_completed ? 'completed' : ''}>
             {props.task.task_name}
+        </td>
+        <td className='task'>
+            {props.task.task_description}
+        </td>
+        <td className='task'>
+            {props.task.task_link}
         </td>
         {/*
         <td>
@@ -22,7 +29,7 @@ export default class StudentTasks extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/students/')
+        axios.get('http://localhost:4000/tasks/student/'+this.props.match.params.id)
             .then(response => {
                 this.setState({ tasks: response.data });
             })
@@ -40,11 +47,15 @@ export default class StudentTasks extends Component {
     render() {
         return (
             <div>
-                <h3>Student Name goes here</h3>
+                <h3>Student Id: {this.props.match.params.id}</h3>
+                <h5>Task List</h5>
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>
                         <tr>
                             <th>Task Name</th>
+                            <th>Task Description</th>
+                            <th>Link</th>
+                            <th>Edit?</th>
                         </tr>
                     </thead>
                     <tbody>

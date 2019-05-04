@@ -27,8 +27,11 @@ import EditTodo from "./edit-todo.component";
 const Student = props => (
     <tr>
         <td className='student'>
-            <Link to={"/student/"+props.student._id+"/tasks"}>{props.student.name}</Link>
+            <Link to={"/admin/student/"+props.student._id+"/tasks"}>{props.student.student_name}</Link>
         </td>
+        <td>{props.student.student_username}</td>
+        <td>{props.student.western_id}</td>
+        <td>{props.student.admission_qtr}</td>
         <td>
             <Link to={"/edit/student/"+props.student._id}>Edit</Link>
         </td>
@@ -66,6 +69,9 @@ export default class StudentList extends Component {
                     <thead>
                         <tr>
                             <th>Student Name</th>
+                            <th>Username</th>
+                            <th>Western #</th>
+                            <th>Admission Qtr</th>
                         </tr>
                     </thead>
                     <tbody>

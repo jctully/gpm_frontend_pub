@@ -82,7 +82,7 @@ export default class CreateStudent extends Component {
                         <label>Name: </label>
                         <input  type="text"
                                 className="form-control"
-                                value={this.state.name}
+                                value={this.state.student_name}
                                 onChange={this.onChangeStudentName}
                                 />
                     </div>
@@ -90,7 +90,7 @@ export default class CreateStudent extends Component {
                         <label>Username: </label>
                         <input  type="text"
                                 className="form-control"
-                                value={this.state.username}
+                                value={this.state.student_username}
                                 onChange={this.onChangeStudentUsername}
                                 />
                     </div>
