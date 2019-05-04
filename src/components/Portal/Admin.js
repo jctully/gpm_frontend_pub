@@ -15,21 +15,35 @@ export default class Admin extends Component {
           <TopBar />
           <Menu />
           <h3>Admin portal</h3>
+          
+          <Link to="/admin">
+            <button className="button">Admin homepage</button>
+          </Link>
+          
+          <Link to="/admin/create/student">
+            <button className="button">Create Student</button>
+          </Link>
+
+          <Link to="/admin/create/task">
+            <button className="button">Create Task</button>
+          </Link>
+          {/*
           <a href="/admin/create/student">
             <button className="button">Create Student</button>
           </a>
           <a href="/admin/create/task">
             <button className="button">Create Task</button>
           </a>
-          <StudentsList />
-        </div>
+          */}
+          {/*<StudentsList />*/}
 
-        {/*
-        <Route path="/admin/" exact component={ListStudents} />
-        <Route path="/admin/create/student" component={CreateStudent} />
-        <Route path="/admin/create/task" component={CreateTask} />
-        *<Route path="/admin/edit/:id" component={EditTodo} />*
-        */}
+          <Route path="/admin/" exact component={StudentsList} />
+          <Route path="/admin/create/student" component={CreateStudent} />
+          <Route path="/admin/create/task" component={CreateTask} />
+          {/*<Route path="/admin/student/tasks" component={CreateTask} />*/}
+          {/*<Route path="/admin/edit/:id" component={EditTodo} />*/}
+
+        </div>
       </Router>
     );
   }

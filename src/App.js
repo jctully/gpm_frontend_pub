@@ -94,24 +94,6 @@ class App extends Component {
             </div>
           )}
         />
-        <Route
-            exact={true}
-            path="/admin/create/student"
-            render={() => (
-              <div className="App">
-                <CreateStudent />
-              </div>
-            )}
-          />
-        <Route
-            exact={true}
-            path="/admin/create/task"
-            render={() => (
-              <div className="App">
-                <CreateTask />
-              </div>
-            )}
-          />
        </div>
       </Router>
     );

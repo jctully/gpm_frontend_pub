@@ -26,7 +26,9 @@ import EditTodo from "./edit-todo.component";
 
 const Student = props => (
     <tr>
-        <td className='student'>{props.student.name}</td>
+        <td className='student'>
+            <Link to={"/student/"+props.student._id+"/tasks"}>{props.student.name}</Link>
+        </td>
         <td>
             <Link to={"/edit/student/"+props.student._id}>Edit</Link>
         </td>
