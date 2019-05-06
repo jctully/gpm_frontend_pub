@@ -3,7 +3,7 @@
   height:100%;
   overflow-y: auto;
   perspective: 2px;
-  
+
 }
 
 .App-logo {
@@ -27,7 +27,7 @@
   color: #61dafb;
 }
 
-.MainContainer {  
+.MainContainer {
   text-align: center;
   background-color:#003f87;
   perspective: 1px;
@@ -222,5 +222,19 @@
 }
 .btn-gradient:hover {
   text-decoration:none;
-  
+
+}
+
+/* Dropdown */
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown__content {
+    display: none;
+    position: absolute;
+}
+
+.dropdown--active .dropdown__content {
+    display: block;
 }
