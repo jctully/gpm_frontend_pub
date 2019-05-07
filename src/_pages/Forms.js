@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import TopBar from "./TopBar";
-import Menu from "./Menu"
+import TopBar from "../_components/TopBar";
+import Menu from "../_components/Menu"
 
 export default class Forms extends Component {
   render(  ) {

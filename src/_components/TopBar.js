@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import mainLogo from "../../Assets/westernlogo_white_sm.png";
+import mainLogo from "../_assets/westernlogo_white_sm.png";
 import UserDropdown from "./Dropdown"
 
 export default class TopBar extends Component {

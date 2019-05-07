@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import '../../App.css';
+import '../App.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 
 export default class Info extends Component {
     render() {
-        return (                   
-            <div class="MainContainer">           
+        return (
+            <div class="MainContainer">
                 <div class="banner"></div>
 
                 <div class="ContentContainer">
 
                     <div class="Content">
-                    
+
                     <h1 className='page-title'>CS Graduate Program Information</h1>
                     <p>Select the tab for your student status</p>
                     <a href="/login">
@@ -25,7 +25,7 @@ export default class Info extends Component {
                         </TabList>
                         <TabPanel>
                             <h2 class="tabBody">Info for Prospective Students</h2>
-                                <p>Admissions and program details can be found here: 
+                                <p>Admissions and program details can be found here:
                                     <a href='https://gradschool.wwu.edu/computer-science'> https://gradschool.wwu.edu/computer-science</a>
                                     <br></br>
                                     If you are a CS honors student, please follow the normal application procedure to apply to the Graduate Program.
@@ -34,7 +34,7 @@ export default class Info extends Component {
                                     <a href='https://cse.wwu.edu/cs/graduate-programs'> https://cse.wwu.edu/cs/graduate-programs</a>
                                 </p>
                                 <p>Further questions? Contact us:</p>
-                                <p>Yudong Liu, CS Graduate Program Advisor 
+                                <p>Yudong Liu, CS Graduate Program Advisor
                                     <br></br>
                                     Office: CF 483, Phone: 360-650-4831, email: <a href="mailto:Yudong.Liu@wwu.edu">Yudong.Liu@wwu.edu</a>
                                 </p>
@@ -57,14 +57,14 @@ export default class Info extends Component {
                                     <li><a href="https://esign.wwu.edu/forms/CSCI/_csci_grad_research_proj_1.aspx">Graduate Research Project Form</a></li>
                                     <li><a href="https://esign.wwu.edu/forms/Grad_School/_degree_rec_non_thesis_1.aspx">Degree Recommendation Non-Thesis Option</a></li>
                                     <li><a href="https://gradschool.wwu.edu/degree-completion">Application for Degree</a></li>
-                                    <li><a href="https://gradschool.wwu.edu/courses-credits">Independent Study</a></li>                                
+                                    <li><a href="https://gradschool.wwu.edu/courses-credits">Independent Study</a></li>
                                     <br/>
-                                    General Graduate School Info                                
+                                    General Graduate School Info
                                     <li><a href='https://gradschool.wwu.edu/program-requirements-0'>Academic Policies</a></li>
                                     <li><a href='https://gradschool.wwu.edu/funding-support'>Funding and Support</a></li>
                                 </ul>
                                 <p>Further questions? Contact us:</p>
-                                <p>Yudong Liu, CS Graduate Program Director 
+                                <p>Yudong Liu, CS Graduate Program Director
                                     <br></br>
                                     Office: CF 483, Phone: 360-650-4831, email: <a href="mailto:Yudong.Liu@wwu.edu">Yudong.Liu@wwu.edu</a>
                                 </p>
@@ -81,5 +81,5 @@ export default class Info extends Component {
             </div>
         )
     }
-     
+
 }

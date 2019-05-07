@@ -2,5 +2,5 @@
     "w": "w00000000",
     "first_name": "Yoda",
     "last_name": "Minch",
-    "role": "admin"
+    "roles": ["admin","faculty"]
   }]

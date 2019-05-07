@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
-import Student from  "../../Assets/Student.json";
+import Student from  "../_assets/Student.json";
 
 export default class DD extends React.Component {
   constructor(props) {

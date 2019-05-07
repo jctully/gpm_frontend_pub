@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../../App.css';
+import '../App.css';
 
 export default class Home extends Component {
 
@@ -20,7 +20,7 @@ export default class Home extends Component {
                     <a href="/todo">
                       <button className="button">Todos</button>
                     </a>
-                    <a href="/portal">
+                    <a href="/admin">
                         <button id='bypass' className="button">BYPASS</button>
                     </a>
                 </div>
