@@ -33,7 +33,7 @@ const Student = props => (
         <td>{props.student.western_id}</td>
         <td>{props.student.admission_qtr}</td>
         <td>
-            <Link to={"/edit/student/"+props.student._id}>Edit</Link>
+            <Link to={"/admin/students/edit/"+props.student._id}>Edit</Link>
         </td>
     </tr>
 )
@@ -72,6 +72,7 @@ export default class StudentList extends Component {
                             <th>Username</th>
                             <th>Western #</th>
                             <th>Admission Qtr</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -14,24 +14,34 @@ const Task = props => (
         <td className='task'>
             {props.task.task_link}
         </td>
-        {/*
         <td>
-            <Link to={"/admin/student/edit/student/"+props.student._id}>Edit</Link>
+            <Link to={"/admin/tasks/edit/"+props.task._id}>Edit</Link>
         </td>
-        */}
+        
     </tr>
 )
 
 export default class StudentTasks extends Component {
     constructor(props) {
         super(props);
-        this.state = {tasks: []};
+        this.state = {
+            tasks: [],
+            student: ''
+        };
     }
 
     componentDidMount() {
         axios.get('http://localhost:4000/tasks/student/'+this.props.match.params.id)
             .then(response => {
                 this.setState({ tasks: response.data });
+            })
+            .catch(function (error){
+                console.log(error);
+            })
+
+        axios.get('http://localhost:4000/students/'+this.props.match.params.id)
+            .then(response => {
+                this.setState({ student: response.data });
             })
             .catch(function (error){
                 console.log(error);
@@ -47,7 +57,7 @@ export default class StudentTasks extends Component {
     render() {
         return (
             <div>
-                <h3>Student Id: {this.props.match.params.id}</h3>
+                <h3>Student Name: {this.state.student.student_name}</h3>
                 <h5>Task List</h5>
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>
@@ -55,7 +65,7 @@ export default class StudentTasks extends Component {
                             <th>Task Name</th>
                             <th>Task Description</th>
                             <th>Link</th>
-                            <th>Edit?</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>

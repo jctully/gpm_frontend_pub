@@ -8,6 +8,8 @@ import StudentsList from "../Admin/list.students.component";
 import CreateTask from "../Admin/create.student.task.component";
 import Student from "./Student";
 import StudentTasks from "../Student/student.tasks.component";
+import EditTask from "../Admin/edit.task.component";
+import EditStudent from "../Admin/edit.student.component";
 
 export default class Admin extends Component {
   render(  ) {
@@ -19,7 +21,7 @@ export default class Admin extends Component {
           <h3>Admin portal</h3>
           
           <Link to="/admin">
-            <button className="button">Admin homepage</button>
+            <button className="button">Portal</button>
           </Link>
           
           <Link to="/admin/create/student">
@@ -44,6 +46,9 @@ export default class Admin extends Component {
           <Route path="/admin/create/task" component={CreateTask} />
 
           <Route path="/admin/student/:id/tasks" component={StudentTasks} />
+          
+          <Route path="/admin/students/edit/:id" component={EditStudent} />
+          <Route path="/admin/tasks/edit/:id" component={EditTask} />
 
           {/*<Route path="/admin/student/tasks" component={CreateTask} />*/}
           {/*<Route path="/admin/edit/:id" component={EditTodo} />*/}
