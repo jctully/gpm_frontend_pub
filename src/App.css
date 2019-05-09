@@ -55,6 +55,8 @@
   z-index: -1;
 }
 
+
+
 /* .ParallaxContainer {
   background-image: url("/images/splash.jpg");
   background-size: 200% auto;
@@ -87,10 +89,14 @@
   filter: drop-shadow(0 1rem 0.75rem black);
 }
 
+
 .page-title {
   margin-top: 1%;
-  font-size: 3em;
+  font-size: 2em;
 }
+
+
+
 
 .wrap {
   word-wrap: break-word;
@@ -104,6 +110,8 @@
   top:-15%;
   right:0;
 }
+
+
 
 /* login page */
 #username {
@@ -127,6 +135,7 @@
   position: absolute;
   z-index: 999;
 }
+
 
 
 @keyframes App-logo-spin {
@@ -223,4 +232,34 @@
 .btn-gradient:hover {
   text-decoration:none;
   
+}
+
+/* For mobile devices */
+@media (max-width: 1000px) {
+  .banner{
+    height: 20%;
+    width: 100%;
+    min-width: 0px;
+  }
+
+  .ContentContainer {
+    min-height: 80%;
+    width:100%;
+    min-width: 0px;
+    filter: none;
+  }
+
+  .page-title {
+    font-size: 1.5em;
+  }
+
+  #info-login {
+    position: static;
+  }
+
+  #bypass {
+    top:2%;
+  }
+  
+
 }

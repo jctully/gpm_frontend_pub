@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MediaQuery from 'react-responsive';
 import '../../App.css';
 
 export default class Home extends Component {
@@ -8,9 +9,12 @@ export default class Home extends Component {
         return (
 
             <div className='MainContainer'>
-            <div className='banner'></div>
+                
+                <div className='banner'></div>
+                
                 <div className='ContentContainer'>
                     <h1 className='page-title'> Welcome to the Graduate Program Manager Application!</h1>
+
                     <a href="/info">
                         <button className="button">Info</button>
                     </a>
@@ -18,7 +22,7 @@ export default class Home extends Component {
                         <button className="button">Login</button>
                     </a>
                     <a href="/todo">
-                      <button className="button">Todos</button>
+                    <button className="button">Todos</button>
                     </a>
                     <a href="/portal">
                         <button id='bypass' className="button">BYPASS</button>
