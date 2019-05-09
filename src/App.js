@@ -8,24 +8,25 @@ import { hasRole, isAllowed } from "./auth";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Login from "./_pages/Login";
+import Login from "./Login/Login";
 import Home from "./_pages/Home";
 import Info from "./_pages/Info";
 import Admin from "./_pages/Admin";
 import Forms from "./_pages/Forms";
-import Student from "./_pages/Student";
+import Student from "./Portal/Student";
 import Todo from "./_pages/todo.component"
+import {PrivateRoute} from './_components/Login/PrivateRoute'
 
-const user = {
-  roles: ['user']
-};
-
-const faculty = {
-    roles: ['user', 'faculty']
-}
-const admin = {
-  roles: ['user', 'faculty', 'admin'],
-};
+// const user = {
+//   roles: ['user']
+// };
+//
+// const faculty = {
+//     roles: ['user', 'faculty']
+// }
+// const admin = {
+//   roles: ['user', 'faculty', 'admin'],
+// };
 
 class App extends Component {
   render() {
@@ -34,11 +35,11 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route path="/info" component={Info}/>
-              {hasRole(user, ['admin']) && <Route path="/admin" component={Admin}/>}
-              {hasRole(user, ['user']) && <Route path="/student" component={Student}/>}
-              <Route path="/todo" component={Todo}/>
-              <Route path="/forms" component={Forms}/>
-              <Route path="/login" exact component={Login}/>
+              <PrivateRoute exact path="/admin" component={Admin}/>
+              <PrivateRoute exact path="/student" component={Student}/>
+              <PrivateRoute exact path="/todo" component={Todo}/>
+              <PrivateRoute exact path="/forms" component={Forms}/>
+              <Route exact path="/login" exact component={Login}/>
             </Switch>
          </Router>
       // <Router>
