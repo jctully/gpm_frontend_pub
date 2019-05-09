@@ -12,7 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+.completed {
+  text-decoration: line-through;
+}
 .TopBar {
   color: white;
   display: flex;
