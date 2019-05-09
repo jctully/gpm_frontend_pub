@@ -4,6 +4,21 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 
 export default class Home extends Component {
+
+    renderLogoutButton(){
+        if(this.state.loginSuccess===true){//change this conditional when login implemented
+           return(
+            <a href="/home" onClick="logOut()">
+                        <button class="button">Log Out</button>
+            </a>
+           );
+         }
+    }
+
+    logOut() {
+        //log out function here
+    }
+
     render() {
         return (                   
             <div class="MainContainer">           
@@ -15,8 +30,9 @@ export default class Home extends Component {
                     
                     <h1 className='page-title'>CS Graduate Program Manager</h1>
                     <a href="/login">
-                        <button class="button">Login</button>
+                        <button class="button">Log In</button>
                     </a>
+                    {this.renderLogoutButton}
                     <a href="/todo">
                         <button className="button">Todos</button>
                     </a>
