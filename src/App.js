@@ -10,7 +10,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
-import Info from "./components/Info/Info";
 import Portal from "./components/Portal/Portal";
 import Forms from "./components/Portal/Forms";
 import Student from "./components/Portal/Student";
@@ -39,14 +38,6 @@ class App extends Component {
             </div>
           )}
         />
-        <Route
-          exact={true}
-          path="/info"
-          render={() => (
-            <div className="App">
-              <Info />
-            </div>
-          )}/>
         <Route
           exact={true}
           path="/todo"
