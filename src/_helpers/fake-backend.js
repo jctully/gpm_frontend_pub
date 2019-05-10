@@ -43,6 +43,8 @@ export function configureFakeBackend() {
                     // is implemented server side in a real application
                     if (opts.headers && opts.headers.Authorization === `Basic ${window.btoa('user:user')}`) {
                         resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(users)) });
+                    } else if (opts.headers && opts.headers.Authorization === `Basic ${window.btoa('admin:admin')}`) {
+                        resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(users)) });
                     } else {
                         // return 401 not authorised if token is null or invalid
                         resolve({ status: 401, text: () => Promise.resolve() });

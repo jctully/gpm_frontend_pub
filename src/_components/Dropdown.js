@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { userService } from '../_services/user.service';
 import Student from  "../_assets/Student.json";
 
-export default class DD extends React.Component {
+export default class DD extends Component {
   constructor(props) {
     super(props);
 
@@ -34,11 +34,12 @@ export default class DD extends React.Component {
   }
 
   render() {
+
     const { user, users } = this.state;
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
           <DropdownToggle caret>
-            <span class="name">
+            <span class="name">User
             </span>
           </DropdownToggle>
         <DropdownMenu>

@@ -13,7 +13,7 @@ import Home from "./_pages/Home";
 import Info from "./_pages/Info";
 import Admin from "./_pages/Admin";
 import Forms from "./_pages/Forms";
-import Student from "./Portal/Student";
+import Student from "./Portal/Portal";
 import Todo from "./_pages/todo.component"
 import {PrivateRoute} from './_components/Login/PrivateRoute'
 

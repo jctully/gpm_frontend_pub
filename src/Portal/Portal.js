@@ -3,6 +3,7 @@ import { userService } from '../_services/user.service'
 
 import TopBar from "../_components/TopBar";
 import Menu from "../_components/Menu"
+import StudentTasks from "../_components/Todo/Student/student.tasks.component";
 
 export default class Student extends Component {
   constructor(props) {
@@ -22,13 +23,15 @@ export default class Student extends Component {
         userService.getAll().then(users => this.setState({ users }));
     }
 
+
   render(  ) {
-    const { user, users } = this.state; 
+    const userData = user;
+    const { user, users } = this.state;
     return (
       <div>
-        <TopBar />
+        <TopBar data={userData}/>
         <Menu />
-        <h3>Student information</h3>
+        <h3>Welcome to portal</h3>
         <h4>Hi {user.firstName}</h4>
       </div>
     );

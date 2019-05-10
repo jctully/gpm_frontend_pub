@@ -40,7 +40,7 @@ export default class LoginPage extends React.Component {
         userService.login(username, password)
             .then(
                 user => {
-                    const { from } = this.props.location.state || { from: { pathname: "/student" } };
+                    const { from } = this.props.location.state || { from: { pathname: "/portal" } };
                     this.props.history.push(from);
                 },
                 error => this.setState({ error, loading: false })
