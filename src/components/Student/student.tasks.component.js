@@ -5,13 +5,16 @@ import axios from 'axios';
 const Task = props => (
     <tr>
         {/* Maybe if completed put green check box here somehow */}
+        <td className="checkbox">
+            <input type="checkbox" checked={props.task.task_completed}></input>
+        </td>
         <td className={props.task.task_completed ? 'completed' : ''}>
             {props.task.task_name}
         </td>
-        <td className='task'>
+        <td className={props.task.task_completed ? 'completed' : ''}>
             {props.task.task_description}
         </td>
-        <td className='task'>
+        <td className={props.task.task_completed ? 'completed' : ''}>
             {props.task.task_link}
         </td>
         <td>
@@ -62,6 +65,7 @@ export default class StudentTasks extends Component {
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>
                         <tr>
+                            <th>Task Completed</th>
                             <th>Task Name</th>
                             <th>Task Description</th>
                             <th>Link</th>
