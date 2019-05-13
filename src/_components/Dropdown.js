@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-
+import { authenticationService } from '../_services/authentication.service'
 import Student from  "../_assets/Student.json";
 
 export default class DD extends React.Component {
@@ -26,7 +26,9 @@ export default class DD extends React.Component {
           <span class="name">{ "Hello, " + Student[0].first_name + " " + Student[0].last_name }</span>
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem>Log out</DropdownItem>
+          <DropdownItem>Log out
+            { authenticationService.logout()}
+          </DropdownItem>
         </DropdownMenu>
       </Dropdown>
     );

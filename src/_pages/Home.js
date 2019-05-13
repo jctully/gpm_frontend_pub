@@ -1,10 +1,26 @@
 import React, { Component } from "react";
 import '../App.css';
+import { userService } from '../_services/user.service'
+import { authenticationService } from '../_services/authentication.service'
+
 
 export default class Home extends Component {
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            currentUser: authenticationService.currentUserValue,
+            userFromApi: null
+        };
+    }
+
+    componentDidMount() {
+        const { currentUser } = this.state;
+        userService.getById(currentUser.id).then(userFromApi => this.setState({ userFromApi }));
+    }
 
     render () {
+                const { currentUser, userFromApi } = this.state;
         return (
 
             <div className='MainContainer'>
