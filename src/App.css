@@ -97,11 +97,19 @@
   overflow-wrap: break-word;
 }
 
-#bypass {
+#bypass-admin {
   color: blue;
   background-color: red;
   position: fixed;
-  top:-15%;
+  top:-20%;
+  right:0;
+}
+
+#bypass-student {
+  color: blue;
+  background-color: red;
+  position: fixed;
+  top:-10%;
   right:0;
 }
 

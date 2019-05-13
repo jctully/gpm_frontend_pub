@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import '../App.css';
 import { userService } from '../_services/user.service'
 import { authenticationService } from '../_services/authentication.service'

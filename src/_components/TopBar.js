@@ -8,7 +8,7 @@ export default class TopBar extends Component {
       <header className="TopBar">
         <img src={mainLogo} alt="Western Logo" />
         <h4>Grad Program Manager!</h4>
-        <UserDropdown />
+        <UserDropdown data={this.props.data}/>
       </header>
     );
   }

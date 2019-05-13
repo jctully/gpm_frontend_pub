@@ -15,9 +15,7 @@ export default class Todo extends Component {
       <Router>
         <div>
           <Route exact={true} path="/" render={() => (
-              <div className="App">
-              <App />
-              </div>
+              <div className="App"><App /></div>
           )}/>
 
           <div className="container">
