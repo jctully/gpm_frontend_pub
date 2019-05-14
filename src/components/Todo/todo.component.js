@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CreateTodo from "./create-todo.component";
 import EditTodo from "./edit-todo.component";
 import TodosList from "./todos-list.component";
-import Home from "../Home/Home";
+import Home from "../../pages/Home";
 import App from "../../App";
 
 import logo from "../../logo.svg";

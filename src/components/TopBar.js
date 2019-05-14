@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import mainLogo from "../../Assets/westernlogo_white_sm.png";
-import  Student from  "../../Assets/Student.json";
+import mainLogo from "../assets/westernlogo_white_sm.png";
+import  Student from  "../assets/Student.json";
 
 export default class TopBar extends Component {
   render() {

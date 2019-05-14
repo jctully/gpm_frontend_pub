@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Admin from '../Portal/Admin';
+import Admin from '../../pages/Admin';
 
 export default class CreateTask extends Component {
 

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import TopBar from "./TopBar";
-import Menu from "./Menu"
-import StudentTasks from "../Student/student.tasks.component";
+import TopBar from "../components/TopBar";
+import Menu from "../components/Menu"
+import StudentTasks from "../components/Student/student.tasks.component";
 
 export default class Student extends Component {
   render(  ) {

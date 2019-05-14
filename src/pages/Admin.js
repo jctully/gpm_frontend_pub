@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import TopBar from "./TopBar";
-import Menu from "./Menu"
-import CreateStudent from "../Admin/create.student.component";
-import StudentsList from "../Admin/list.students.component";
-import CreateTask from "../Admin/create.student.task.component";
-import Student from "./Student";
-import StudentTasks from "../Student/student.tasks.component";
-import EditTask from "../Admin/edit.task.component";
-import EditStudent from "../Admin/edit.student.component";
+import TopBar from "../components/TopBar";
+import Menu from "../components/Menu"
+import CreateStudent from "../components/Admin/create.student.component";
+import StudentsList from "../components/Admin/list.students.component";
+import CreateTask from "../components/Admin/create.student.task.component";
+import Student from "../pages/Student";
+import StudentTasks from "../components/Student/student.tasks.component";
+import EditTask from "../components/Admin/edit.task.component";
+import EditStudent from "../components/Admin/edit.student.component";
 
 export default class Admin extends Component {
   render(  ) {

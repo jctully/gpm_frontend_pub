@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../App.css';
+import '../App.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 
@@ -36,8 +36,11 @@ export default class Home extends Component {
                     <a href="/todo">
                         <button className="button">Todos</button>
                     </a>
-                    <a href="/portal">
-                        <button id='bypass' className="button">BYPASS</button>
+                    <a href="/student">
+                        <button id='bypass-student' className="button">Student</button>
+                    </a>
+                    <a href="/admin">
+                        <button id='bypass-admin' className="button">Admin</button>
                     </a>
                     <p>Select the tab for your student status</p>
 
