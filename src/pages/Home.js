@@ -33,9 +33,9 @@ export default class Home extends Component {
                         <button class="button">Log In</button>
                     </a>
                     {this.renderLogoutButton}
-                    <a href="/todo">
+                    {/* <a href="/todo">
                         <button className="button">Todos</button>
-                    </a>
+                    </a> */}
                     <a href="/student">
                         <button id='bypass-student' className="button">Student</button>
                     </a>

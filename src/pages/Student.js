@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 import { userService } from '../services/user.service'
@@ -6,6 +7,7 @@ import { authenticationService } from '../services/authentication.service';
 
 import TopBar from "../components/TopBar";
 import Menu from "../components/Menu"
+
 import StudentTasks from "../components/Student/student.tasks.component";
 
 
@@ -37,6 +39,11 @@ render() {
                 <li>{userFromApi.firstName} {userFromApi.lastName}</li>
             </ul>
         }
+
+          <Route path="/student/student/:id/tasks" component={StudentTasks} />
+          
+          {/*<Route path="/admin/student/tasks" component={CreateTask} />*/}
+          {/*<Route path="/admin/edit/:id" component={EditTodo} />*/}
       </div>
     );
   }

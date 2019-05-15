@@ -54,12 +54,12 @@ componentDidMount() {
           </Link>
 
           {users &&
-                        <ul>
-                            {users.map(user =>
-                                <li key={user.id}>{user.firstName} {user.lastName}</li>
-                            )}
-                        </ul>
-}
+            <ul>
+                {users.map(user =>
+                    <li key={user.id}>{user.firstName} {user.lastName}</li>
+                )}
+            </ul>
+          }
                     
           {/*
           <a href="/admin/create/student">
