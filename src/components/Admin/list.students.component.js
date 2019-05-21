@@ -19,6 +19,7 @@ export default class ListStudents extends Component {
 import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
 import axios from 'axios';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 /*
 import EditTodo from "./edit-todo.component";
@@ -45,8 +46,34 @@ export default class StudentList extends Component {
         this.state = {students: []};
     }
 
+    handleClick(qtr) {
+        axios.get('http://localhost:4000/students?qtr=' + qtr, {
+          })
+            .then(response => {
+                this.setState({ students: response.data });
+            })
+            .catch(function (error){
+                console.log(error);
+            })
+        this.forceUpdate()
+    }
+
+    handleSearch(qry) {
+        console.log("AAAAAAAAAAAAAA" + qry);
+        axios.get('http://localhost:4000/students?search=' + qry, {
+          })
+            .then(response => {
+                this.setState({ students: response.data });
+            })
+            .catch(function (error){
+                console.log(error);
+            })
+        this.forceUpdate()
+    }
+
     componentDidMount() {
-        axios.get('http://localhost:4000/students/')
+        axios.get('http://localhost:4000/students', {
+          })
             .then(response => {
                 this.setState({ students: response.data });
             })
@@ -61,10 +88,28 @@ export default class StudentList extends Component {
         })
     }
 
+    
+
     render() {
         return (
             <div>
                 <h3>Student List</h3>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+                <input id='filter-search' className='inline' type="text" ref="username" placeholder="Name, ID, or W#" />
+                <button id='submit-filter' type="submit" className='submit'  onClick={() => {
+                    this.handleSearch(document.getElementById('filter-search').value); } }><i className="fa fa-search"></i></button>
+                <Dropdown className='inline'>
+                    <DropdownButton  drop='down' title='Quarter'>
+                        <Dropdown.Item onClick={() => {
+                            this.componentDidMount(); } }>All</Dropdown.Item>
+                        <Dropdown.Item onClick={() => {
+                            this.handleClick("f19"); } }>Fall 19</Dropdown.Item>
+                        <Dropdown.Item onClick={() => {
+                            this.handleClick("w19"); } }>Winter 19</Dropdown.Item>
+                        <Dropdown.Item onClick={() => {
+                            this.handleClick("s19"); } }>Spring 19</Dropdown.Item>
+                    </DropdownButton>
+                </Dropdown>
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>
                         <tr>
