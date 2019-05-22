@@ -56,7 +56,6 @@
 }
 
 
-
 /* .ParallaxContainer {
   background-image: url("/images/splash.jpg");
   background-size: 200% auto;
@@ -95,9 +94,6 @@
   font-size: 2em;
 }
 
-
-
-
 .wrap {
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -134,6 +130,37 @@
   z-index: 999;
 }
 
+/* admin portal */
+#filter-search {
+  position: relative;
+  padding: 6px;
+  border: 1px solid grey;
+  width: 20em;
+  background: #f1f1f1;
+
+}
+
+.inline {
+  display:inline-block;
+  margin: 0 0px 0 10px;
+}
+
+/* Style the submit button */
+.submit {
+  padding: 6px;
+
+  width: 5%;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: #0b7dda;
+}
 
 
 @keyframes App-logo-spin {
