@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Admin from '../Portal/Admin';
 
-export default class CreateForm extends Component {
+export default class EditForm extends Component {
 
     constructor(props) {
         super(props);
@@ -11,6 +11,7 @@ export default class CreateForm extends Component {
         this.onChangeUrl = this.onChangeUrl.bind(this);
         this.onChangeNotes = this.onChangeNotes.bind(this);
         this.onChangeStudent = this.onChangeStudent.bind(this);
+        this.onChangeFormCompleted = this.onChangeFormCompleted.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
@@ -18,11 +19,26 @@ export default class CreateForm extends Component {
             url: '',
             notes: '',
             student_id: '',
+            form_completed: false,
             students: []
         }
     }
 
     componentDidMount() {
+        axios.get('http://localhost:4000/forms/'+this.props.match.params.id)
+            .then(response => {
+                this.setState({
+                    name: response.data.name,
+                    url: response.data.url,
+                    notes: response.data.notes,
+                    student_id: response.data.student_id,
+                    form_completed: response.data.form_completed
+                })
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
         axios.get('http://localhost:4000/students/')
             .then(response => {
                 this.setState({ students: response.data });
@@ -62,39 +78,39 @@ export default class CreateForm extends Component {
         });
     }
 
+    onChangeFormCompleted(e){
+        this.setState({
+            form_completed: !this.state.form_completed
+        });
+    }
+
     onSubmit(e) {
         e.preventDefault();
 
-        console.log(`Form submitted:`);
+        console.log(`Form Edited:`);
         console.log(`Name: ${this.state.name}`);
         console.log(`Url: ${this.state.url}`);
         console.log(`Notes: ${this.state.notes}`);
         console.log(`Student: ${this.state.student_id}`);
+        console.log(`Completed: ${this.state.form_completed}`);
 
-        const newForm = {
+        const editedForm = {
             name: this.state.name,
             url: this.state.url,
             notes: this.state.notes,
             student_id: this.state.student_id,
-            form_completed: false
+            form_completed: this.state.form_completed
         };
 
-        if(newForm.student_id != ''){
-            axios.post('http://localhost:4000/forms/add', newForm)
+        if(editedForm.student_id != ''){
+            axios.post('http://localhost:4000/forms/update/'+this.props.match.params.id, editedForm)
             .then(res => console.log(res.data));
         } else {
             // display message letting user know they didn't select a student
             console.log("No student selected!");
         }
 
-        
-
-        this.setState({
-            name: '',
-            url: '',
-            notes: '',
-            student_id: ''
-        })
+        this.props.history.push('/admin');
     }
 
     render() {
@@ -128,6 +144,21 @@ export default class CreateForm extends Component {
                                 onChange={this.onChangeNotes}
                                 />
                     </div>
+                    <br></br>
+                    <div className="form-check">
+                        <input  className="form-check-input"
+                                id="completedCheckbox"
+                                type="checkbox"
+                                name="completedCheckbox"
+                                onChange={this.onChangeFormCompleted}
+                                checked={this.state.form_completed}
+                                value={this.state.form_completed}
+                                />
+                        <label className="form-check-label" htmlFor="completedCheckbox">
+                            Completed
+                        </label>
+                    </div>
+                    <br></br>
                     <div className="form-group">
                         <label>Assigned Student: &nbsp;</label>
                         {/*<input
@@ -142,7 +173,7 @@ export default class CreateForm extends Component {
                     </div>
 
                     <div className="form-group">
-                        <input type="submit" value="Create Form" className="btn btn-primary" />
+                        <input type="submit" value="Edit Form" className="btn btn-primary" />
                     </div>
                 </form>
             </div>
