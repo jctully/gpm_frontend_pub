@@ -15,6 +15,7 @@ import StudentPortal from "../Student/student.portal.component";
 import CreateForm from "../Admin/create.student.form.component";
 import CreateClass from "../Admin/create.student.class.component";
 import EditForm from "../Admin/edit.form.component";
+import EditClass from "../Admin/edit.class.component";
 
 export default class Admin extends Component {
   render(  ) {
@@ -57,6 +58,7 @@ export default class Admin extends Component {
           <Route path="/admin/students/edit/:id" component={EditStudent} />
           <Route path="/admin/tasks/edit/:id" component={EditTask} />
           <Route path="/admin/forms/edit/:id" component={EditForm} />
+          <Route path="/admin/classes/edit/:id" component={EditClass} />
 
           {/*<Route path="/admin/student/tasks" component={CreateTask} />*/}
           {/*<Route path="/admin/edit/:id" component={EditTodo} />*/}
