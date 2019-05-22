@@ -10,6 +10,8 @@ import Student from "./Student";
 import StudentTasks from "../Student/student.tasks.component";
 import EditTask from "../Admin/edit.task.component";
 import EditStudent from "../Admin/edit.student.component";
+import StudentForms from "../Student/student.forms.component";
+import StudentPortal from "../Student/student.portal.component";
 
 export default class Admin extends Component {
   render(  ) {
@@ -18,7 +20,7 @@ export default class Admin extends Component {
         <div>
           <TopBar />
           <Menu />
-          <h3>Admin portal</h3>
+          <h2>Admin portal</h2>
           
           <Link to="/admin">
             <button className="button">Portal</button>
@@ -45,7 +47,7 @@ export default class Admin extends Component {
           <Route path="/admin/create/student" component={CreateStudent} />
           <Route path="/admin/create/task" component={CreateTask} />
 
-          <Route path="/admin/student/:id/tasks" component={StudentTasks} />
+          <Route path="/admin/student/:id/tasks" component={StudentPortal} />
           
           <Route path="/admin/students/edit/:id" component={EditStudent} />
           <Route path="/admin/tasks/edit/:id" component={EditTask} />

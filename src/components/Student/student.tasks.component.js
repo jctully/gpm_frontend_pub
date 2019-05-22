@@ -15,7 +15,7 @@ const Task = props => (
             {props.task.task_description}
         </td>
         <td className={props.task.task_completed ? 'completed' : ''}>
-            {props.task.task_link}
+            <a href={props.task.task_link}>{props.task.task_link}</a> {/* If link doesn't have http:// in link will redirect locally */}
         </td>
         <td>
             <Link to={"/admin/tasks/edit/"+props.task._id}>Edit</Link>
@@ -34,7 +34,7 @@ export default class StudentTasks extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/tasks/student/'+this.props.match.params.id)
+        axios.get('http://localhost:4000/tasks/student/'+this.props.studentId)
             .then(response => {
                 this.setState({ tasks: response.data });
             })
@@ -42,7 +42,7 @@ export default class StudentTasks extends Component {
                 console.log(error);
             })
 
-        axios.get('http://localhost:4000/students/'+this.props.match.params.id)
+        axios.get('http://localhost:4000/students/'+this.props.studentId)
             .then(response => {
                 this.setState({ student: response.data });
             })
@@ -60,8 +60,8 @@ export default class StudentTasks extends Component {
     render() {
         return (
             <div>
-                <h3>Student Name: {this.state.student.student_name}</h3>
-                <h5>Task List</h5>
+                <h5>Student: {this.state.student.student_name}</h5>
+                <h4>Task List</h4>
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>
                         <tr>
