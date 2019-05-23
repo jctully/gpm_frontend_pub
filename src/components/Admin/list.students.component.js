@@ -49,7 +49,7 @@ export default class StudentList extends Component {
 
   handleClick(qtr) {
     axios
-      .get('https://gradprogmantest.herokuapp.com/students?qtr=' + qtr, {})
+      .get('https://gpm-backend.herokuapp.com//students?qtr=' + qtr, {})
       .then(response => {
         this.setState({ students: response.data });
       })
@@ -62,7 +62,7 @@ export default class StudentList extends Component {
   handleSearch(qry) {
     console.log('AAAAAAAAAAAAAA' + qry);
     axios
-      .get('https://gradprogmantest.herokuapp.com/students?search=' + qry, {})
+      .get('https://gpm-backend.herokuapp.com//students?search=' + qry, {})
       .then(response => {
         this.setState({ students: response.data });
       })
@@ -74,7 +74,7 @@ export default class StudentList extends Component {
 
   componentDidMount() {
     axios
-      .get('https://gradprogmantest.herokuapp.com/students', {})
+      .get('https://gpm-backend.herokuapp.com//students', {})
       .then(response => {
         this.setState({ students: response.data });
       })

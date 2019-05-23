@@ -29,7 +29,7 @@ export default class TodosList extends Component {
 
   componentDidMount() {
     axios
-      .get('https://gradprogmantest.herokuapp.com/todos/')
+      .get('https://gpm-backend.herokuapp.com//todos/')
       .then(response => {
         this.setState({ todos: response.data });
       })

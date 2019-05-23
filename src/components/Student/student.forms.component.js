@@ -37,7 +37,7 @@ export default class StudentForms extends Component {
   componentDidMount() {
     axios
       .get(
-        'https://gradprogmantest.herokuapp.com/forms/student/' +
+        'https://gpm-backend.herokuapp.com//forms/student/' +
           this.props.studentId
       )
       .then(response => {
