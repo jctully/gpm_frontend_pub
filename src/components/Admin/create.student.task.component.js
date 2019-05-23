@@ -23,7 +23,7 @@ export default class CreateTask extends Component {
 
   componentDidMount() {
     axios
-      .get('https://gpm-backend.herokuapp.com//students/')
+      .get('https://gpm-backend.herokuapp.com/students/')
       .then(response => {
         this.setState({ students: response.data });
       })
@@ -84,7 +84,7 @@ export default class CreateTask extends Component {
     };
 
     axios
-      .post('https://gpm-backend.herokuapp.com//tasks/add', newTask)
+      .post('https://gpm-backend.herokuapp.com/tasks/add', newTask)
       .then(res => console.log(res.data));
 
     this.setState({

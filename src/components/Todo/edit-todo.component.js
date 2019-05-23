@@ -22,7 +22,7 @@ export default class EditTodo extends Component {
   componentDidMount() {
     axios
       .get(
-        'https://gpm-backend.herokuapp.com//todos/' + this.props.match.params.id
+        'https://gpm-backend.herokuapp.com/todos/' + this.props.match.params.id
       )
       .then(response => {
         this.setState({
@@ -72,7 +72,7 @@ export default class EditTodo extends Component {
     console.log(obj);
     axios
       .post(
-        'https://gpm-backend.herokuapp.com//todos/update/' +
+        'https://gpm-backend.herokuapp.com/todos/update/' +
           this.props.match.params.id,
         obj
       )

@@ -25,7 +25,7 @@ export default class CreateClass extends Component {
 
   componentDidMount() {
     axios
-      .get('https://gpm-backend.herokuapp.com//students/')
+      .get('https://gpm-backend.herokuapp.com/students/')
       .then(response => {
         this.setState({ students: response.data });
       })
@@ -95,7 +95,7 @@ export default class CreateClass extends Component {
 
     if (newClass.student_id != '') {
       axios
-        .post('https://gpm-backend.herokuapp.com//classes/add', newClass)
+        .post('https://gpm-backend.herokuapp.com/classes/add', newClass)
         .then(res => console.log(res.data));
     } else {
       // display message letting user know they didn't select a student

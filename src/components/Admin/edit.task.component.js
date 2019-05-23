@@ -25,7 +25,7 @@ export default class EditTask extends Component {
   componentDidMount() {
     axios
       .get(
-        'https://gpm-backend.herokuapp.com//tasks/' + this.props.match.params.id
+        'https://gpm-backend.herokuapp.com/tasks/' + this.props.match.params.id
       )
       .then(response => {
         this.setState({
@@ -41,7 +41,7 @@ export default class EditTask extends Component {
       });
 
     axios
-      .get('https://gpm-backend.herokuapp.com//students/')
+      .get('https://gpm-backend.herokuapp.com/students/')
       .then(response => {
         this.setState({ students: response.data });
       })
@@ -102,7 +102,7 @@ export default class EditTask extends Component {
     console.log(obj);
     axios
       .post(
-        'https://gpm-backend.herokuapp.com//tasks/update/' +
+        'https://gpm-backend.herokuapp.com/tasks/update/' +
           this.props.match.params.id,
         obj
       )

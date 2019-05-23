@@ -52,7 +52,7 @@ export default class CreateTodo extends Component {
     };
 
     axios
-      .post('https://gpm-backend.herokuapp.com//todos/add', newTodo)
+      .post('https://gpm-backend.herokuapp.com/todos/add', newTodo)
       .then(res => console.log(res.data));
 
     this.setState({

@@ -61,7 +61,7 @@ export default class CreateStudent extends Component {
     };
 
     axios
-      .post('https://gpm-backend.herokuapp.com//students/add', newStudent)
+      .post('https:/gpm-backend.herokuapp.com/students/add', newStudent)
       .then(res => console.log(res.data));
 
     this.setState({

@@ -36,7 +36,7 @@ export default class StudentTasks extends Component {
   componentDidMount() {
     axios
       .get(
-        'https://gpm-backend.herokuapp.com//tasks/student/' +
+        'https://gpm-backend.herokuapp.com/tasks/student/' +
           this.props.studentId
       )
       .then(response => {
@@ -47,9 +47,7 @@ export default class StudentTasks extends Component {
       });
 
     axios
-      .get(
-        'https://gpm-backend.herokuapp.com//students/' + this.props.studentId
-      )
+      .get('https://gpm-backend.herokuapp.com/students/' + this.props.studentId)
       .then(response => {
         this.setState({ student: response.data });
       })

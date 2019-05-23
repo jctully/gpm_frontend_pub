@@ -28,7 +28,7 @@ export default class EditClass extends Component {
   componentDidMount() {
     axios
       .get(
-        'https://gpm-backend.herokuapp.com//classes/' +
+        'https://gpm-backend.herokuapp.com/classes/' +
           this.props.match.params.id
       )
       .then(response => {
@@ -47,7 +47,7 @@ export default class EditClass extends Component {
       });
 
     axios
-      .get('https://gpm-backend.herokuapp.com//students/')
+      .get('https://gpm-backend.herokuapp.com/students/')
       .then(response => {
         this.setState({ students: response.data });
       })
@@ -125,7 +125,7 @@ export default class EditClass extends Component {
     if (editedClass.student_id != '') {
       axios
         .post(
-          'https://gpm-backend.herokuapp.com//classes/update/' +
+          'https://gpm-backend.herokuapp.com/classes/update/' +
             this.props.match.params.id,
           editedClass
         )

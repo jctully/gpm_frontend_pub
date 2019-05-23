@@ -26,7 +26,7 @@ export default class EditForm extends Component {
   componentDidMount() {
     axios
       .get(
-        'https://gpm-backend.herokuapp.com//forms/' + this.props.match.params.id
+        'https://gpm-backend.herokuapp.com/forms/' + this.props.match.params.id
       )
       .then(response => {
         this.setState({
@@ -42,7 +42,7 @@ export default class EditForm extends Component {
       });
 
     axios
-      .get('https://gpm-backend.herokuapp.com//students/')
+      .get('https://gpm-backend.herokuapp.com/students/')
       .then(response => {
         this.setState({ students: response.data });
       })
@@ -112,7 +112,7 @@ export default class EditForm extends Component {
     if (editedForm.student_id != '') {
       axios
         .post(
-          'https://gpm-backend.herokuapp.com//forms/update/' +
+          'https://gpm-backend.herokuapp.com/forms/update/' +
             this.props.match.params.id,
           editedForm
         )

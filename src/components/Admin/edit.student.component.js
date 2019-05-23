@@ -47,7 +47,7 @@ export default class EditStudent extends Component {
   componentDidMount() {
     axios
       .get(
-        'https://gpm-backend.herokuapp.com//students/' +
+        'https://gpm-backend.herokuapp.com/students/' +
           this.props.match.params.id
       )
       .then(response => {
@@ -174,7 +174,7 @@ export default class EditStudent extends Component {
     console.log(obj);
     axios
       .post(
-        'https://gpm-backend.herokuapp.com//students/update/' +
+        'https://gpm-backend.herokuapp.com/students/update/' +
           this.props.match.params.id,
         obj
       )

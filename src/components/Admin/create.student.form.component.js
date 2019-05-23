@@ -23,7 +23,7 @@ export default class CreateForm extends Component {
 
   componentDidMount() {
     axios
-      .get('https://gpm-backend.herokuapp.com//students/')
+      .get('https://gpm-backend.herokuapp.com/students/')
       .then(response => {
         this.setState({ students: response.data });
       })
@@ -85,7 +85,7 @@ export default class CreateForm extends Component {
 
     if (newForm.student_id != '') {
       axios
-        .post('https://gpm-backend.herokuapp.com//forms/add', newForm)
+        .post('https://gpm-backend.herokuapp.com/forms/add', newForm)
         .then(res => console.log(res.data));
     } else {
       // display message letting user know they didn't select a student
