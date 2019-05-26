@@ -1,58 +1,27 @@
-import React, { Component } from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse, MDBContainer,
-MDBHamburgerToggler } from 'mdbreact';
-
-function loc(curr) {
-  if(curr === "http://localhost:3000/portal#!") {
-    return "Portal";
-  }
-}
+import React, { Component } from "react";
+import { Navbar, Nav } from 'react-bootstrap'
 
 class NavbarPage extends Component {
 state = {
-  collapse1: false,
-  collapseID: ''
-}
+  isOpen: false
+};
 
-toggleCollapse = collapseID => () => {
-  this.setState(prevState => ({ collapseID: (prevState.collapseID !== collapseID ? collapseID : '') }));
-}
-
-toggleSingleCollapse = collapseId => {
-  this.setState({
-    ...this.state,
-    [collapseId]: !this.state[collapseId]
-  });
+toggleCollapse = () => {
+  this.setState({ isOpen: !this.state.isOpen });
 }
 
 render() {
   return (
-    <MDBContainer>
-      <MDBNavbar color="#d3531a" width="100%">
-        <MDBContainer>
-          <MDBNavbarBrand>
-            {window.location.pathname}
-          </MDBNavbarBrand>
-          <MDBHamburgerToggler color="#d3531a" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} />
-            <MDBCollapse isOpen={this.state.collapse1} navbar>
-              <MDBNavbarNav left>
-                <MDBNavItem active>
-                  <MDBNavLink to="/portal">Home</MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="/forms">Forms</MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="/student">Student</MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="/admin">Admin</MDBNavLink>
-                </MDBNavItem>
-              </MDBNavbarNav>
-            </MDBCollapse>
-        </MDBContainer>
-      </MDBNavbar>
-    </MDBContainer>
+    <Navbar bg="dark" variant="dark">
+    <Navbar.Brand href="#home">Menu</Navbar.Brand>
+    <Nav className="mr-auto">
+      <Nav.Link href="/portal">Home</Nav.Link>
+      <Nav.Link href="/forms">Forms</Nav.Link>
+      <Nav.Link href="/student">Student</Nav.Link>
+      <Nav.Link href="/admin">Admin</Nav.Link>
+
+    </Nav>
+  </Navbar>
     );
   }
 }
