@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from 'axios';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+
 
 const Task = props => (
     <tr>
@@ -49,6 +51,28 @@ export default class StudentTasks extends Component {
             .catch(function (error){
                 console.log(error);
             })
+            this.forceUpdate()
+
+    }
+
+    handleFilter(filter) {
+        axios.get('http://localhost:4000/tasks/student/'+this.props.studentId+'?completed='+filter)
+            .then(response => {
+                this.setState({ tasks: response.data });
+            })
+            .catch(function (error){
+                console.log(error);
+            })
+
+        axios.get('http://localhost:4000/students/'+this.props.studentId)
+            .then(response => {
+                this.setState({ student: response.data });
+            })
+            .catch(function (error){
+                console.log(error);
+            })
+            this.forceUpdate()
+
     }
 
     taskList() {
@@ -62,6 +86,16 @@ export default class StudentTasks extends Component {
             <div>
                 <h5>Student: {this.state.student.student_name}</h5>
                 <h4>Task List</h4>
+                <Dropdown className='inline'>
+                    <DropdownButton  drop='down' title='Show'>
+                        <Dropdown.Item onClick={() => {
+                            this.componentDidMount(); } }>All</Dropdown.Item>
+                        <Dropdown.Item onClick={() => {
+                            this.handleFilter("false"); } }>Incomplete</Dropdown.Item>
+                        <Dropdown.Item onClick={() => {
+                            this.handleFilter("true"); } }>Complete</Dropdown.Item>
+                    </DropdownButton>
+                </Dropdown>
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>
                         <tr>

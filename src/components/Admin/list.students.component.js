@@ -59,7 +59,6 @@ export default class StudentList extends Component {
     }
 
     handleSearch(qry) {
-        console.log("AAAAAAAAAAAAAA" + qry);
         axios.get('http://localhost:4000/students?search=' + qry, {
           })
             .then(response => {
@@ -88,16 +87,17 @@ export default class StudentList extends Component {
         })
     }
 
-    
-
     render() {
         return (
             <div>
                 <h3>Student List</h3>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+                <button id='show-all-button' className='inline' onClick={() => this.componentDidMount()}>Show All</button>
+
                 <input id='filter-search' className='inline' type="text" ref="username" placeholder="Name, ID, or W#" />
                 <button id='submit-filter' type="submit" className='submit'  onClick={() => {
                     this.handleSearch(document.getElementById('filter-search').value); } }><i className="fa fa-search"></i></button>
+                
                 <Dropdown className='inline'>
                     <DropdownButton  drop='down' title='Quarter'>
                         <Dropdown.Item onClick={() => {
