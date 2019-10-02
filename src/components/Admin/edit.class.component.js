@@ -27,7 +27,7 @@ export default class EditClass extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/classes/'+this.props.match.params.id)
+        axios.get('https://www.gpmbackend.com/classes/'+this.props.match.params.id)
             .then(response => {
                 console.log("completed:"+response.data.class_completed);
                 this.setState({
@@ -44,7 +44,7 @@ export default class EditClass extends Component {
             })
 
 
-        axios.get('http://localhost:4000/students/')
+        axios.get('https://www.gpmbackend.com/students/')
             .then(response => {
                 this.setState({ students: response.data });
             })
@@ -116,7 +116,7 @@ export default class EditClass extends Component {
         };
 
         if(editedClass.student_id != ''){
-            axios.post('http://localhost:4000/classes/update/'+this.props.match.params.id, editedClass)
+            axios.post('https://www.gpmbackend.com/classes/update/'+this.props.match.params.id, editedClass)
             .then(res => console.log(res.data));
         } else {
             // display message letting user know they didn't select a student

@@ -34,7 +34,7 @@ export default class StudentTasks extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/tasks/student/'+this.props.studentId)
+        axios.get('https://www.gpmbackend.com/tasks/student/'+this.props.studentId)
             .then(response => {
                 this.setState({ tasks: response.data });
             })
@@ -42,7 +42,7 @@ export default class StudentTasks extends Component {
                 console.log(error);
             })
 
-        axios.get('http://localhost:4000/students/'+this.props.studentId)
+        axios.get('https://www.gpmbackend.com/students/'+this.props.studentId)
             .then(response => {
                 this.setState({ student: response.data });
             })

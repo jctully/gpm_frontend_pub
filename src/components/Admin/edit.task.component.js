@@ -24,7 +24,7 @@ export default class EditTask extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/tasks/'+this.props.match.params.id)
+        axios.get('https://www.gpmbackend.com/tasks/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     task_name: response.data.task_name,
@@ -38,7 +38,7 @@ export default class EditTask extends Component {
                 console.log(error);
             })
 
-        axios.get('http://localhost:4000/students/')
+        axios.get('https://www.gpmbackend.com/students/')
             .then(response => {
                 this.setState({ students: response.data });
             })
@@ -93,7 +93,7 @@ export default class EditTask extends Component {
             task_completed: this.state.task_completed
         };
         console.log(obj);
-        axios.post('http://localhost:4000/tasks/update/'+this.props.match.params.id, obj)
+        axios.post('https://www.gpmbackend.com/tasks/update/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
 
         this.props.history.push('/admin');

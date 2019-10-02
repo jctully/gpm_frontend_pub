@@ -42,7 +42,7 @@ export default class EditStudent extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/students/'+this.props.match.params.id)
+        axios.get('https://www.gpmbackend.com/students/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     student_name: response.data.student_name,
@@ -164,7 +164,7 @@ export default class EditStudent extends Component {
             other_notes: this.state.other_notes
         };
         console.log(obj);
-        axios.post('http://localhost:4000/students/update/'+this.props.match.params.id, obj)
+        axios.post('https://www.gpmbackend.com/students/update/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
 
         this.props.history.push('/admin/');

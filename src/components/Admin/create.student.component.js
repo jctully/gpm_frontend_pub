@@ -61,7 +61,7 @@ export default class CreateStudent extends Component {
             admission_qtr: this.state.admission_qtr
         };
 
-        axios.post('http://localhost:4000/students/add', newStudent)
+        axios.post('https://www.gpmbackend.com/students/add', newStudent)
             .then(res => console.log(res.data));
 
 

@@ -23,7 +23,7 @@ export default class CreateTask extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/students/')
+        axios.get('https://www.gpmbackend.com/students/')
             .then(response => {
                 this.setState({ students: response.data });
             })
@@ -79,7 +79,7 @@ export default class CreateTask extends Component {
             task_completed: false
         };
 
-        axios.post('http://localhost:4000/tasks/add', newTask)
+        axios.post('https://www.gpmbackend.com/tasks/add', newTask)
             .then(res => console.log(res.data));
 
 
