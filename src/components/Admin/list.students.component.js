@@ -47,7 +47,7 @@ export default class StudentList extends Component {
     }
 
     handleClick(qtr) {
-        axios.get('http://localhost:4000/students?qtr=' + qtr, {
+        axios.get('https://www.gpmbackend.com/students?qtr=' + qtr, {
           })
             .then(response => {
                 this.setState({ students: response.data });
@@ -60,7 +60,7 @@ export default class StudentList extends Component {
 
     handleSearch(qry) {
         console.log("AAAAAAAAAAAAAA" + qry);
-        axios.get('http://localhost:4000/students?search=' + qry, {
+        axios.get('https://www.gpmbackend.com/students?search=' + qry, {
           })
             .then(response => {
                 this.setState({ students: response.data });
@@ -72,7 +72,7 @@ export default class StudentList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/students', {
+        axios.get('https://www.gpmbackend.com/students', {
           })
             .then(response => {
                 this.setState({ students: response.data });

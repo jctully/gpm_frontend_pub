@@ -25,7 +25,7 @@ export default class CreateClass extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/students/')
+        axios.get('https://www.gpmbackend.com/students/')
             .then(response => {
                 this.setState({ students: response.data });
             })
@@ -90,7 +90,7 @@ export default class CreateClass extends Component {
         };
 
         if(newClass.student_id != ''){
-            axios.post('http://localhost:4000/classes/add', newClass)
+            axios.post('https://www.gpmbackend.com/classes/add', newClass)
             .then(res => console.log(res.data));
         } else {
             // display message letting user know they didn't select a student

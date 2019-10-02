@@ -23,7 +23,7 @@ export default class CreateForm extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/students/')
+        axios.get('https://www.gpmbackend.com/students/')
             .then(response => {
                 this.setState({ students: response.data });
             })
@@ -80,7 +80,7 @@ export default class CreateForm extends Component {
         };
 
         if(newForm.student_id != ''){
-            axios.post('http://localhost:4000/forms/add', newForm)
+            axios.post('https://www.gpmbackend.com/forms/add', newForm)
             .then(res => console.log(res.data));
         } else {
             // display message letting user know they didn't select a student

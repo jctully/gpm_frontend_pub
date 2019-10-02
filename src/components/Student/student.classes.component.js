@@ -36,7 +36,7 @@ export default class StudentClasses extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/classes/student/'+this.props.studentId)
+        axios.get('https://www.gpmbackend.com/classes/student/'+this.props.studentId)
             .then(response => {
                 this.setState({ classes: response.data });
             })

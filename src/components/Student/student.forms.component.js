@@ -34,7 +34,7 @@ export default class StudentForms extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/forms/student/'+this.props.studentId)
+        axios.get('https://www.gpmbackend.com/forms/student/'+this.props.studentId)
             .then(response => {
                 this.setState({ forms: response.data });
             })
