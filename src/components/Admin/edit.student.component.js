@@ -173,7 +173,9 @@ export default class EditStudent extends Component {
     render() {
         return (
             <div>
-                <h3 align="center">Update Student</h3>
+                <br></br>
+                <br></br>
+                <h3 align="center">Student Information</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Student Name: </label>
