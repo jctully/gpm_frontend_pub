@@ -21,6 +21,7 @@ export default class EditStudent extends Component {
         this.onChangeExpectedGradQtr = this.onChangeExpectedGradQtr.bind(this);
         this.onChangeAppToGradFormLink = this.onChangeAppToGradFormLink.bind(this);
         this.onChangeDegreeAppFormLink = this.onChangeDegreeAppFormLink.bind(this);
+        this.onChangeDegreeRecFormLink = this.onChangeDegreeRecFormLink.bind(this);
         this.onChangeOtherNotes = this.onChangeOtherNotes.bind(this);
 
         this.onSubmit = this.onSubmit.bind(this);
@@ -40,6 +41,7 @@ export default class EditStudent extends Component {
             expected_grad_qtr: '',
             app_to_graduate_form_link: '',
             degree_app_form_link: '',
+            degree_rec_form_link: '',
             other_notes: ''
         }
     }
@@ -62,6 +64,7 @@ export default class EditStudent extends Component {
                     expected_grad_qtr: response.data.expected_grad_qtr,
                     app_to_graduate_form_link: response.data.app_to_graduate_form_link,
                     degree_app_form_link: response.data.degree_app_form_link,
+                    degree_rec_form_link: response.data.degree_rec_form_link,
                     other_notes: response.data.other_notes
                 })
             })
@@ -149,6 +152,12 @@ export default class EditStudent extends Component {
         });
     }
 
+    onChangeDegreeRecFormLink(e) {
+        this.setState({
+            degree_rec_form_link: e.target.value
+        });
+    }
+
     onChangeOtherNotes(e) {
         this.setState({
             other_notes: e.target.value
@@ -172,6 +181,7 @@ export default class EditStudent extends Component {
             expected_grad_qtr: this.state.expected_grad_qtr,
             app_to_graduate_form_link: this.state.app_to_graduate_form_link,
             degree_app_form_link: this.state.degree_app_form_link,
+            degree_rec_form_link: this.state.degree_app_form_link,
             other_notes: this.state.other_notes
         };
         console.log(obj);
@@ -320,6 +330,16 @@ export default class EditStudent extends Component {
                                 className="form-control"
                                 value={this.state.degree_app_form_link}
                                 onChange={this.onChangeDegreeAppFormLink}
+                                />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Degree Recommendation Form Link: </label>
+                        <input
+                                type="text"
+                                className="form-control"
+                                value={this.state.degree_rec_form_link}
+                                onChange={this.onChangeDegreeRecFormLink}
                                 />
                     </div>
 

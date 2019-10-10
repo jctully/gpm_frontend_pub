@@ -36,7 +36,7 @@ export default class Home extends Component {
                     <a href="/todo">
                         <button className="button">Todos</button>
                     </a>
-                    <a href="/portal">
+                    <a href="/admin">
                         <button id='bypass' className="button">BYPASS</button>
                     </a>
                     <p>Select the tab for your student status</p>
