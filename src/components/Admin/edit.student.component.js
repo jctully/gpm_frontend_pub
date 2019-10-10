@@ -181,7 +181,7 @@ export default class EditStudent extends Component {
             expected_grad_qtr: this.state.expected_grad_qtr,
             app_to_graduate_form_link: this.state.app_to_graduate_form_link,
             degree_app_form_link: this.state.degree_app_form_link,
-            degree_rec_form_link: this.state.degree_app_form_link,
+            degree_rec_form_link: this.state.degree_rec_form_link,
             other_notes: this.state.other_notes
         };
         console.log(obj);
