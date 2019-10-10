@@ -36,12 +36,6 @@ render() {
           <MDBHamburgerToggler color="#d3531a" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} />
             <MDBCollapse isOpen={this.state.collapse1} navbar>
               <MDBNavbarNav left>
-                <MDBNavItem active>
-                  <MDBNavLink to="/portal">Home</MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="/forms">Forms</MDBNavLink>
-                </MDBNavItem>
                 <MDBNavItem>
                   <MDBNavLink to="/student/5d94e801fb8539513126219a/portal">Student</MDBNavLink>
                 </MDBNavItem>

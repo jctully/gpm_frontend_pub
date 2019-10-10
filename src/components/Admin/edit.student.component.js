@@ -5,11 +5,13 @@ export default class EditStudent extends Component {
 
     constructor(props) {
         super(props);
+        super(props.studentDisplay);
 
         this.onChangeStudentName = this.onChangeStudentName.bind(this);
         this.onChangeStudentUsername = this.onChangeStudentUsername.bind(this);
         this.onChangeWesternId = this.onChangeWesternId.bind(this);
         this.onChangeAdmissionQtr = this.onChangeAdmissionQtr.bind(this);
+        this.onChangeProgramCode = this.onChangeProgramCode.bind(this);
 
         this.onChangeStatus = this.onChangeStatus.bind(this);
         this.onChangeTAAssignment = this.onChangeTAAssignment.bind(this);
@@ -28,6 +30,7 @@ export default class EditStudent extends Component {
             student_username: '',
             western_id: '',
             admission_qtr: '',
+            program_code: '',
 
             status: '',
             ta_assignment: '',
@@ -49,6 +52,7 @@ export default class EditStudent extends Component {
                     student_username: response.data.student_username,
                     western_id: response.data.western_id,
                     admission_qtr: response.data.admission_qtr,
+                    program_code: response.data.program_code,
 
                     status: response.data.status,
                     ta_assignment: response.data.ta_assignment,
@@ -87,6 +91,12 @@ export default class EditStudent extends Component {
     onChangeAdmissionQtr(e) {
         this.setState({
             admission_qtr: e.target.value
+        });
+    }
+
+    onChangeProgramCode(e) {
+        this.setState({
+            program_code: e.target.value
         });
     }
 
@@ -152,6 +162,7 @@ export default class EditStudent extends Component {
             student_username: this.state.student_username,
             western_id: this.state.western_id,
             admission_qtr: this.state.admission_qtr,
+            program_code: this.state.program_code,
 
             status: this.state.status,
             ta_assignment: this.state.ta_assignment,
@@ -206,6 +217,26 @@ export default class EditStudent extends Component {
                                 />
                     </div>
                     
+                    <div className="form-group">
+                        <label>Admission Quarter: </label>
+                        <input
+                                type="text"
+                                className="form-control"
+                                value={this.state.admission_qtr}
+                                onChange={this.onChangeAdmissionQtr}
+                                />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Program Code: </label>
+                        <input
+                                type="text"
+                                className="form-control"
+                                value={this.state.program_code}
+                                onChange={this.onChangeProgramCode}
+                                />
+                    </div>
+
                     <div className="form-group">
                         <label>Status: </label>
                         <input
@@ -307,10 +338,13 @@ export default class EditStudent extends Component {
 
                     <br />
 
+                    
+
                     <div className="form-group">
                         <input type="submit" value="Update Student" className="btn btn-primary" />
                     </div>
                 </form>
+                <p>{this.props.studentDisplay}</p>
             </div>
         )
     }
