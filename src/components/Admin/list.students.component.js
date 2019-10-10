@@ -33,6 +33,26 @@ const Student = props => (
         <td>{props.student.student_username}</td>
         <td>{props.student.western_id}</td>
         <td>{props.student.admission_qtr}</td>
+        <td>{props.student.program_code}</td>
+        <td>{props.student.status}</td>
+        <Dropdown className='inline'>
+            <DropdownButton  drop='down' title='Forms'>
+                <Dropdown.Item href={props.student.plan_of_study_link}>
+                    Plan of Study
+                </Dropdown.Item>
+                <Dropdown.Item href={props.student.research_form_692_link}>
+                    Research Form
+                </Dropdown.Item>
+                <Dropdown.Item href={props.student.degree_app_form_link}>
+                    Degree Application Form
+                </Dropdown.Item>
+                <Dropdown.Item href={props.student.degree_rec_form_link}>
+                    Degree Recommendation Form
+                </Dropdown.Item>
+            </DropdownButton>
+        </Dropdown>
+        <td>{props.student.ta_assignment}</td>
+        <td>{props.student.other_notes}</td>
         <td>
             <Link to={"/admin/students/edit/"+props.student._id}>Edit</Link>
         </td>
@@ -59,7 +79,6 @@ export default class StudentList extends Component {
     }
 
     handleSearch(qry) {
-        console.log("AAAAAAAAAAAAAA" + qry);
         axios.get('https://www.gpmbackend.com/students?search=' + qry, {
           })
             .then(response => {
@@ -117,6 +136,11 @@ export default class StudentList extends Component {
                             <th>Username</th>
                             <th>Western #</th>
                             <th>Admission Qtr</th>
+                            <th>Program Code</th>
+                            <th>Current Status</th>
+                            <th>Forms</th>
+                            <th>TA quarters Assigned</th>
+                            <th>Notes</th>
                             <th>Edit</th>
                         </tr>
                     </thead>

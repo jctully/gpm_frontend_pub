@@ -61,6 +61,8 @@ export default class StudentTasks extends Component {
         return (
             <div>
                 <h5>Student: {this.state.student.student_name}</h5>
+                <br></br>
+                <br></br>
                 <h4>Task List</h4>
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>

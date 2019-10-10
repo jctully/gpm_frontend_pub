@@ -13,7 +13,7 @@ export default class Student extends Component {
       <div>
         <TopBar />
         <Menu />
-        <Route path="/student/:id/portal" component={StudentPortal} />
+        <Route path="/student/:id/portal" render={(props) => <StudentPortal {...props} studentDisplay="true" />} />
         <Route path="/student/:id/portal" component={EditStudent} />
       </div>
     );
