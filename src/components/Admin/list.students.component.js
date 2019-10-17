@@ -20,6 +20,7 @@ import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
 import axios from 'axios';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
+import Popup from 'reactjs-popup';
 
 /*
 import EditTodo from "./edit-todo.component";
@@ -35,6 +36,7 @@ const Student = props => (
         <td>{props.student.admission_qtr}</td>
         <td>{props.student.program_code}</td>
         <td>{props.student.status}</td>
+        <p></p>
         <Dropdown className='inline'>
             <DropdownButton  drop='down' title='Forms'>
                 <Dropdown.Item href={props.student.plan_of_study_link}>
@@ -51,8 +53,26 @@ const Student = props => (
                 </Dropdown.Item>
             </DropdownButton>
         </Dropdown>
-        <td>{props.student.ta_assignment}</td>
-        <td>{props.student.other_notes}</td>
+        <td>
+            <Popup
+                trigger={<button className="button"> Open TA Assignments </button>}
+                modal
+                closeOnDocumentClick
+            >
+                <span>
+                    {props.student.ta_assignment}
+                </span>
+            </Popup>
+        </td>
+        <td>
+            <Popup
+                trigger={<button className="button"> Open Notes </button>}
+                modal
+                closeOnDocumentClick
+            >
+                <span> {props.student.other_notes} </span>
+            </Popup>
+        </td>
         <td>
             <Link to={"/admin/students/edit/"+props.student._id}>Edit</Link>
         </td>

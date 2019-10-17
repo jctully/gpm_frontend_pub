@@ -288,3 +288,8 @@
   
 
 }
+
+.popup-content {
+  font-size: 30px;
+  padding: 3em !important;
+}

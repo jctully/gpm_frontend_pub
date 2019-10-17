@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 export default class EditStudent extends Component {
 
@@ -31,6 +32,7 @@ export default class EditStudent extends Component {
             student_username: '',
             western_id: '',
             admission_qtr: '',
+            admission_year: '',
             program_code: '',
 
             status: '',
@@ -54,6 +56,7 @@ export default class EditStudent extends Component {
                     student_username: response.data.student_username,
                     western_id: response.data.western_id,
                     admission_qtr: response.data.admission_qtr,
+                    admission_year: response.data.admission_year,
                     program_code: response.data.program_code,
 
                     status: response.data.status,
@@ -171,6 +174,7 @@ export default class EditStudent extends Component {
             student_username: this.state.student_username,
             western_id: this.state.western_id,
             admission_qtr: this.state.admission_qtr,
+            admission_year: this.state.admission_year,
             program_code: this.state.program_code,
 
             status: this.state.status,
@@ -228,32 +232,102 @@ export default class EditStudent extends Component {
                     </div>
                     
                     <div className="form-group">
-                        <label>Admission Quarter: </label>
+                        <Dropdown className='inline'>
+                            <DropdownButton  drop='down' title='Admission Quarter'>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ admission_qtr: "Fall" }); } }>Fall
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ admission_qtr: "Winter" }); } }>Winter
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ admission_qtr: "Spring" }); } }>Spring
+                                </Dropdown.Item>
+                            </DropdownButton>
+                        </Dropdown>
                         <input
-                                type="text"
-                                className="form-control"
-                                value={this.state.admission_qtr}
-                                onChange={this.onChangeAdmissionQtr}
-                                />
+                            type="text"
+                            className="form-control"
+                            value={this.state.admission_qtr}
+                            readOnly
+                        />
                     </div>
 
                     <div className="form-group">
-                        <label>Program Code: </label>
+                        <Dropdown className='inline'>
+                            <DropdownButton  drop='down' title='Admission Year'>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ admission_year: "2016" }); } }>2016
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ admission_year: "2017" }); } }>2017
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ admission_year: "2018" }); } }>2018
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ admission_year: "2019" }); } }>2019
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ admission_year: "2020" }); } }>2020
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ admission_year: "2021" }); } }>2021
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ admission_year: "2022" }); } }>2022
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ admission_year: "2023" }); } }>2023
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ admission_year: "2024" }); } }>2024
+                                </Dropdown.Item>
+                            </DropdownButton>
+                        </Dropdown>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={this.state.admission_year}
+                            readOnly
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <Dropdown className='inline'>
+                            <DropdownButton  drop='down' title='Program Code'>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ program_code: "Regular" }); } }>Regular
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ program_code: "Fast Track" }); } }>Fast Track
+                                </Dropdown.Item>
+                            </DropdownButton>
+                        </Dropdown>
                         <input
                                 type="text"
                                 className="form-control"
                                 value={this.state.program_code}
-                                onChange={this.onChangeProgramCode}
+                                readOnly
                                 />
                     </div>
 
                     <div className="form-group">
-                        <label>Status: </label>
+                        <Dropdown className='inline'>
+                            <DropdownButton  drop='down' title='Status'>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ status: "Active" }); } }>Active
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => {
+                                    this.setState({ status: "Inactive" }); } }>Inactive
+                                </Dropdown.Item>
+                            </DropdownButton>
+                        </Dropdown>
                         <input
                                 type="text"
                                 className="form-control"
                                 value={this.state.status}
-                                onChange={this.onChangeStatus}
+                                readOnly
                                 />
                     </div>
 
