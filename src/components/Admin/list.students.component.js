@@ -31,24 +31,24 @@ const Student = props => (
         <td className='student'>
             <Link to={"/admin/student/"+props.student._id+"/tasks"}>{props.student.student_name}</Link>
         </td>
-        <td>{props.student.student_username}</td>
+        <td>{props.student.email}</td>
         <td>{props.student.western_id}</td>
-        <td>{props.student.admission_qtr}</td>
+        <td>{props.student.admission_qtr} &nbsp; {props.student.admission_year}</td>
         <td>{props.student.program_code}</td>
         <td>{props.student.status}</td>
         <p></p>
         <Dropdown className='inline'>
             <DropdownButton  drop='down' title='Forms'>
-                <Dropdown.Item href={props.student.plan_of_study_link}>
+                <Dropdown.Item href={props.student.plan_of_study_link} target="blank" >
                     Plan of Study
                 </Dropdown.Item>
-                <Dropdown.Item href={props.student.research_form_692_link}>
+                <Dropdown.Item href={props.student.research_form_692_link} target="blank" >
                     Research Form
                 </Dropdown.Item>
-                <Dropdown.Item href={props.student.degree_app_form_link}>
+                <Dropdown.Item href={props.student.degree_app_form_link} target="blank" >
                     Degree Application Form
                 </Dropdown.Item>
-                <Dropdown.Item href={props.student.degree_rec_form_link}>
+                <Dropdown.Item href={props.student.degree_rec_form_link} target="blank" >
                     Degree Recommendation Form
                 </Dropdown.Item>
             </DropdownButton>
@@ -153,9 +153,9 @@ export default class StudentList extends Component {
                     <thead>
                         <tr>
                             <th>Student Name</th>
-                            <th>Username</th>
+                            <th>Email</th>
                             <th>Western #</th>
-                            <th>Admission Qtr</th>
+                            <th>Admission Qtr &amp; Year</th>
                             <th>Program Code</th>
                             <th>Current Status</th>
                             <th>Forms</th>

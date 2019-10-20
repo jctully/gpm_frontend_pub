@@ -9,14 +9,14 @@ export default class CreateStudent extends Component {
         super(props);
 
         this.onChangeStudentName = this.onChangeStudentName.bind(this);
-        this.onChangeStudentUsername = this.onChangeStudentUsername.bind(this);
+        this.onChangeEmail = this.onChangeEmail.bind(this);
         this.onChangeWesternId = this.onChangeWesternId.bind(this);
         this.onChangeAdmissionQtr = this.onChangeAdmissionQtr.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             student_name: '',
-            student_username: '',
+            email: '',
             western_id: '',
             admission_qtr: '',
             admission_year: ''
@@ -29,9 +29,9 @@ export default class CreateStudent extends Component {
         });
     }
 
-    onChangeStudentUsername(e) {
+    onChangeEmail(e) {
         this.setState({
-            student_username: e.target.value
+            email: e.target.value
         });
     }
 
@@ -58,14 +58,14 @@ export default class CreateStudent extends Component {
 
         console.log(`Form submitted:`);
         console.log(`Student Name: ${this.state.student_name}`);
-        console.log(`Student Username: ${this.state.student_username}`);
+        console.log(`Email: ${this.state.email}`);
         console.log(`Western Id: ${this.state.western_id}`);
         console.log(`Admission Qtr: ${this.state.admission_qtr}`);
         console.log(`Admission Year: ${this.state.admission_year}`);
 
         const newStudent = {
             student_name: this.state.student_name,
-            student_username: this.state.student_username,
+            email: this.state.email,
             western_id: this.state.western_id,
             admission_qtr: this.state.admission_qtr,
             admission_year: this.state.admission_year
@@ -77,7 +77,7 @@ export default class CreateStudent extends Component {
 
         this.setState({
             student_name: '',
-            student_username: '',
+            email: '',
             western_id: '',
             admission_qtr: '',
             admission_year: ''
@@ -98,11 +98,11 @@ export default class CreateStudent extends Component {
                                 />
                     </div>
                     <div className="form-group">
-                        <label>Username: </label>
+                        <label>Email: </label>
                         <input  type="text"
                                 className="form-control"
-                                value={this.state.student_username}
-                                onChange={this.onChangeStudentUsername}
+                                value={this.state.email}
+                                onChange={this.onChangeEmail}
                                 />
                     </div>
                     <div className="form-group">
@@ -115,9 +115,8 @@ export default class CreateStudent extends Component {
                                 />
                     </div>
                     <div className="form-group">
-                        <p>Admission Quarter:</p>
                         <Dropdown className='inline'>
-                            <DropdownButton  drop='down' title='Quarter'>
+                            <DropdownButton  drop='down' title='Admission Quarter'>
                                 <Dropdown.Item onClick={() => {
                                     this.setState({ admission_qtr: "Fall" }); } }>Fall
                                 </Dropdown.Item>
@@ -137,9 +136,8 @@ export default class CreateStudent extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <p>Admission Year:</p>
                         <Dropdown className='inline'>
-                            <DropdownButton  drop='down' title='Year'>
+                            <DropdownButton  drop='down' title='Admission Year'>
                                 <Dropdown.Item onClick={() => {
                                     this.setState({ admission_year: "2016" }); } }>2016
                                 </Dropdown.Item>
