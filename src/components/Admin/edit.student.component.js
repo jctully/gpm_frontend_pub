@@ -9,7 +9,7 @@ export default class EditStudent extends Component {
         super(props.studentDisplay);
 
         this.onChangeStudentName = this.onChangeStudentName.bind(this);
-        this.onChangeStudentUsername = this.onChangeStudentUsername.bind(this);
+        this.onChangeEmail = this.onChangeEmail.bind(this);
         this.onChangeWesternId = this.onChangeWesternId.bind(this);
         this.onChangeAdmissionQtr = this.onChangeAdmissionQtr.bind(this);
         this.onChangeProgramCode = this.onChangeProgramCode.bind(this);
@@ -29,7 +29,7 @@ export default class EditStudent extends Component {
 
         this.state = {
             student_name: '',
-            student_username: '',
+            email: '',
             western_id: '',
             admission_qtr: '',
             admission_year: '',
@@ -53,7 +53,7 @@ export default class EditStudent extends Component {
             .then(response => {
                 this.setState({
                     student_name: response.data.student_name,
-                    student_username: response.data.student_username,
+                    email: response.data.email,
                     western_id: response.data.western_id,
                     admission_qtr: response.data.admission_qtr,
                     admission_year: response.data.admission_year,
@@ -82,9 +82,9 @@ export default class EditStudent extends Component {
         });
     }
 
-    onChangeStudentUsername(e) {
+    onChangeEmail(e) {
         this.setState({
-            student_username: e.target.value
+            email: e.target.value
         });
     }
 
@@ -171,7 +171,7 @@ export default class EditStudent extends Component {
         e.preventDefault();
         const obj = {
             student_name: this.state.student_name,
-            student_username: this.state.student_username,
+            email: this.state.email,
             western_id: this.state.western_id,
             admission_qtr: this.state.admission_qtr,
             admission_year: this.state.admission_year,
@@ -212,12 +212,12 @@ export default class EditStudent extends Component {
                     </div>
 
                     <div className="form-group">
-                        <label>Student Username: </label>
+                        <label>Email: </label>
                         <input
                                 type="text"
                                 className="form-control"
-                                value={this.state.student_username}
-                                onChange={this.onChangeStudentUsername}
+                                value={this.state.email}
+                                onChange={this.onChangeEmail}
                                 />
                     </div>
                     
