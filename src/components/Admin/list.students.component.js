@@ -31,7 +31,7 @@ const Student = props => (
         <td className='student'>
             <Link to={"/admin/student/"+props.student._id+"/tasks"}>{props.student.student_name}</Link>
         </td>
-        <td>{props.student.email}</td>
+        <td><a href={"mailto:" + props.student.email + "?subject=Graduate Program Manager&body=Reminder!"}>{props.student.email}</a></td>
         <td>{props.student.western_id}</td>
         <td>{props.student.admission_qtr} &nbsp; {props.student.admission_year}</td>
         <td>{props.student.program_code}</td>
