@@ -40,15 +40,19 @@ const Student = props => (
         <Dropdown className='inline'>
             <DropdownButton  drop='down' title='Forms'>
                 <Dropdown.Item href={props.student.plan_of_study_link} target="blank" >
-                    Plan of Study
+                    <table>
+                        <tr> <td>Plan of Study &thinsp; &thinsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="checkbox" checked={props.student.plan_of_study_link}></input></td> </tr>
+                    </table>
                 </Dropdown.Item>
                 <Dropdown.Item href={props.student.research_form_692_link} target="blank" >
-                    Research Form
+                    <table>
+                        <tr> <td>Research Form &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="checkbox" checked={props.student.research_form_692_link}></input></td> </tr>
+                    </table>
                 </Dropdown.Item>
-                <Dropdown.Item href={props.student.degree_app_form_link} target="blank" >
+                <Dropdown.Item href={props.student.degree_app_form_link} target="blank" className={props.student.degree_app_form_link ? 'completed' : ''} >
                     Degree Application Form
                 </Dropdown.Item>
-                <Dropdown.Item href={props.student.degree_rec_form_link} target="blank" >
+                <Dropdown.Item href={props.student.degree_rec_form_link} target="blank" className={props.student.degree_rec_form_link ? 'completed' : ''} >
                     Degree Recommendation Form
                 </Dropdown.Item>
             </DropdownButton>
