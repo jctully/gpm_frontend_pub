@@ -16,6 +16,8 @@ import CreateForm from "../Admin/create.student.form.component";
 import CreateClass from "../Admin/create.student.class.component";
 import EditForm from "../Admin/edit.form.component";
 import EditClass from "../Admin/edit.class.component";
+import CreateTAAssignment from "../Admin/create.student.taassignment.component";
+import TAAssignmentList from "../Admin/list.taassignments.component";
 
 export default class Admin extends Component {
   render(  ) {
@@ -28,6 +30,14 @@ export default class Admin extends Component {
           
           <Link to="/admin">
             <button className="button">Portal</button>
+          </Link>
+
+          <Link to="/admin/taassignment">
+            <button className="button">TA Assignment</button>
+          </Link>
+
+          <Link to="/admin/create/taassignment">
+            <button className="button">Create TA Assignment</button>
           </Link>
           
           <Link to="/admin/create/student">
@@ -48,6 +58,8 @@ export default class Admin extends Component {
           {/*<StudentsList />*/}
 
           <Route path="/admin/" exact component={StudentsList} />
+          <Route path="/admin/taassignment/" component={TAAssignmentList} />
+          <Route path="/admin/create/taassignment" component={CreateTAAssignment} />
           <Route path="/admin/create/student" component={CreateStudent} />
           <Route path="/admin/create/task" component={CreateTask} />
           <Route path="/admin/create/form" component={CreateForm} />

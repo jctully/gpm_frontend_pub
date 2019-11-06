@@ -83,7 +83,7 @@ const Student = props => (
     </tr>
 )
 
-export default class StudentList extends Component {
+export default class TAAssignmentList extends Component {
 
     constructor(props) {
         super(props);
