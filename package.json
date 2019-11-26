@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
-    "mdbreact": "^4.13.0",
+    "mdbreact": "^4.23.0",
     "mobiscroll": "^3.0.0-beta6",
     "popper.js": "^1.15.0",
     "react": "^16.12.0",
