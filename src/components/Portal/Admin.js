@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import TopBar from './TopBar';
-import Menu from './Menu';
+// import TopBar from './TopBar';
+// import Menu from './Menu';
 import CreateStudent from '../Admin/create.student.component';
 import StudentsList from '../Admin/list.students.component';
 import CreateTask from '../Admin/create.student.task.component';
@@ -24,8 +24,6 @@ class Admin extends Component {
     return (
       <Router>
         <div>
-          <TopBar />
-          <Menu />
           <h2>Admin portal</h2>
 
           <Link to='/admin'>
