@@ -18,7 +18,7 @@ export const loadUser = () => async dispatch => {
   }
 
   try {
-    const res = await axios.get('http://127.0.0.1:4000/api/auth');
+    const res = await axios.get('https://www.gpmbackend.com/api/auth');
 
     dispatch({
       type: USER_LOADED,
@@ -43,7 +43,7 @@ export const register = ({ name, email, password }) => async dispatch => {
 
   try {
     const res = await axios.post(
-      'http://127.0.0.1:4000/api/users',
+      'https://www.gpmbackend.com/api/users',
       body,
       config
     );
@@ -79,7 +79,7 @@ export const login = (email, password) => async dispatch => {
 
   try {
     const res = await axios.post(
-      'http://127.0.0.1:4000/api/auth',
+      'https://www.gpmbackend.com/api/auth',
       body,
       config
     );
