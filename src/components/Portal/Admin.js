@@ -25,35 +25,35 @@ class Admin extends Component {
       <Router>
         <div>
           <h2>Admin portal</h2>
+          <div class="flex-container">
+            <Link to='/admin'>
+              <button className='button'>Portal</button>
+            </Link>
 
-          <Link to='/admin'>
-            <button className='button'>Portal</button>
-          </Link>
+            <Link to='/admin/taassignment'>
+              <button className='button'>TA Assignment</button>
+            </Link>
 
-          <Link to='/admin/taassignment'>
-            <button className='button'>TA Assignment</button>
-          </Link>
+            <Link to='/admin/create/taassignment'>
+              <button className='button'>Create TA Assignment</button>
+            </Link>
 
-          <Link to='/admin/create/taassignment'>
-            <button className='button'>Create TA Assignment</button>
-          </Link>
+            <Link to='/admin/create/student'>
+              <button className='button'>Create Student</button>
+            </Link>
 
-          <Link to='/admin/create/student'>
-            <button className='button'>Create Student</button>
-          </Link>
+            <Link to='/admin/create/task'>
+              <button className='button'>Create Task</button>
+            </Link>
 
-          <Link to='/admin/create/task'>
-            <button className='button'>Create Task</button>
-          </Link>
+            <Link to='/admin/create/form'>
+              <button className='button'>Create Form</button>
+            </Link>
 
-          <Link to='/admin/create/form'>
-            <button className='button'>Create Form</button>
-          </Link>
-
-          <Link to='/admin/create/class'>
-            <button className='button'>Create Class</button>
-          </Link>
-
+            <Link to='/admin/create/class'>
+              <button className='button'>Create Class</button>
+            </Link>
+          </div>
           {/*<StudentsList />*/}
 
           <Route path='/admin/' exact component={StudentsList} />
