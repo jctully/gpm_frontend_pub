@@ -4,41 +4,21 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 export default class Home extends Component {
-  renderLogoutButton() {
-    if (this.state.loginSuccess === true) {
-      //change this conditional when login implemented
-      return (
-        <a href='/home' onClick='logOut()'>
-          <button class='button'>Log Out</button>
-        </a>
-      );
-    }
-  }
-
-  logOut() {
-    //log out function here
-  }
-
   render() {
     return (
-      <div class='MainContainer'>
-        <div class='banner'></div>
+      <div className='MainContainer'>
+        {/* Banner image */}
+        <div className='banner'></div>
 
-        <div class='ContentContainer'>
-          <div class='Content'>
+        <div className='ContentContainer'>
+          <div className='Content'>
             <h1 className='page-title'>CS Graduate Program Manager</h1>
-            <a href='/login'>
-              <button class='button'>Log In</button>
-            </a>
-            {this.renderLogoutButton}
-            <a href='/todo'>
-              <button className='button'>Todos</button>
-            </a>
-            <a href='/admin'>
+
+            {/* <a href='/admin'>
               <button id='bypass' className='button'>
                 BYPASS
               </button>
-            </a>
+            </a> */}
             <p>Select the tab for your student status</p>
 
             <Tabs>
@@ -47,7 +27,7 @@ export default class Home extends Component {
                 <Tab>Current Students</Tab>
               </TabList>
               <TabPanel>
-                <h2 class='tabBody'>Info for Prospective Students</h2>
+                <h2 className='tabBody'>Info for Prospective Students</h2>
                 <p>
                   Admissions and program details can be found here:
                   <a href='https://gradschool.wwu.edu/computer-science'>
